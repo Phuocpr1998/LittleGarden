@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeEnum : MonoBehaviour
+public class TreeGrow : MonoBehaviour
 {
     // Start is called before the first frame update
-    enum Direction
-    {
-        Normal,
-        Wither,
-        Death,
-    }
-
-
     void Start()
     {
         
