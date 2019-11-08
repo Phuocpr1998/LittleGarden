@@ -6,6 +6,7 @@ TagManager:
   tags:
   - boarder
   - item
+  - map_controller
   layers:
   - Default
   - TransparentFX
