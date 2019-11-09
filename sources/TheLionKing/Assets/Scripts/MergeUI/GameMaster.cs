@@ -6,7 +6,7 @@ public class GameMaster : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isMerge = false;
-    public int CountItem = 6;
+    public int CountItem = 9;
     public GameObject ReturnHomeFlower;
     void Start()
     {
