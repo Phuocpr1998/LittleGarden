@@ -40,4 +40,9 @@ public class OptionController : MonoBehaviour
             audioMixer.SetFloat("SFX", -80);
         }
     }
+
+    public void ButtonAcceptClick()
+    {
+        gameObject.SetActive(false);
+    }
 }

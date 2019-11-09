@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MapController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MapController : MonoBehaviour
     public UnityEngine.UI.Text textTimer;
     public GameObject endMapUI;
     public GameObject loadingScreen;
+    public Font fontText;
 
     public GameObject[] targets;
     public GameObject[] lineTargets;
@@ -31,7 +33,9 @@ public class MapController : MonoBehaviour
         endMapUI.SetActive(false);
         duration = 0;
         colectedItems = new Dictionary<int, int>();
+
         targetsLength = targets.Length;
+        itemsLength = items.Length;
 
         StartCreateItem(timeCreateItem);
         StartCoroutine(MapDurationTimerCountdown());
@@ -108,9 +112,10 @@ public class MapController : MonoBehaviour
     {
         int nid = Random.Range(1, maxRangeRandom);
         int id = 0;
-        if (nid > maxRangeRandom / 2)
+        for (id = 0; id < itemsLength - 1; id ++)
         {
-            id = 1;
+            if (id * (maxRangeRandom / itemsLength) <= nid && (id + 1) * (maxRangeRandom / itemsLength) > nid)
+                break;
         }
         items[id].GetComponent<ItemController>().indexType = id;
         return items[id];
@@ -133,14 +138,44 @@ public class MapController : MonoBehaviour
         RectTransform parentOfParent = listItemsColected.GetComponent<RectTransform>().parent.parent.GetComponent<RectTransform>();
         foreach (KeyValuePair<int, int> entry in colectedItems)
         {
-            GameObject g = new GameObject(entry.Key.ToString());
-            UnityEngine.UI.Text t = g.AddComponent<UnityEngine.UI.Text>();
-            g.transform.SetParent(parent);
-            g.AddComponent<UnityEngine.UI.LayoutElement>().flexibleHeight = 30;
-            t.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-            t.text = entry.Value.ToString();
-            t.alignment = TextAnchor.MiddleCenter;
-            t.rectTransform.sizeDelta = new Vector2(parentOfParent.sizeDelta.x, 30);
+            GameObject p = new GameObject(entry.Key.ToString());
+            p.AddComponent<HorizontalLayoutGroup>().childScaleWidth = true;
+            p.GetComponent<HorizontalLayoutGroup>().childScaleHeight = false;
+            p.GetComponent<HorizontalLayoutGroup>().childControlWidth = false;
+            p.transform.SetParent(parent);
+            ((RectTransform)p.transform).sizeDelta = new Vector2(255, 50);
+            p.transform.localScale = new Vector3(1, 2.5f, 1);
+            p.AddComponent<LayoutElement>().flexibleHeight = 30;
+            p.GetComponent<LayoutElement>().flexibleWidth = 50;
+
+            GameObject c1 = new GameObject("image");
+            c1.transform.parent = p.transform;
+            Image image = c1.AddComponent<Image>();
+            image.rectTransform.localScale = new Vector3(0.2f, 0.2f, 0);
+            image.sprite = items[entry.Key].GetComponent<SpriteRenderer>().sprite;
+            image.rectTransform.sizeDelta = new Vector2(255, 30);
+            image.gameObject.AddComponent<LayoutElement>().flexibleHeight = 30;
+            image.gameObject.GetComponent<LayoutElement>().flexibleWidth = 30;
+
+            GameObject c2 = new GameObject("X");
+            c2.transform.parent = p.transform;
+            Text text2 = c2.AddComponent<Text>();
+            text2.font = fontText;
+            text2.text = "X";
+            text2.alignment = TextAnchor.MiddleCenter;
+            text2.rectTransform.sizeDelta = new Vector2(50, 30);
+            text2.gameObject.AddComponent<LayoutElement>().flexibleHeight = 30;
+            text2.gameObject.GetComponent<LayoutElement>().flexibleWidth = 30;
+
+            GameObject c3 = new GameObject("text");
+            c3.transform.parent = p.transform;
+            Text text3 = c3.AddComponent<Text>();
+            text3.font = fontText;
+            text3.text = entry.Value.ToString();
+            text3.alignment = TextAnchor.MiddleCenter;
+            text3.rectTransform.sizeDelta = new Vector2(50, 30);
+            text3.gameObject.AddComponent<LayoutElement>().flexibleHeight = 30;
+            text3.gameObject.GetComponent<LayoutElement>().flexibleWidth = 30;
         }
     }
 

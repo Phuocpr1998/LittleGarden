@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "item")
+        if (collision.gameObject.tag.IndexOf("item") == -1)
             return;
         GameObject mapController =  GameObject.FindGameObjectWithTag("map_controller");
         if (mapController != null)
