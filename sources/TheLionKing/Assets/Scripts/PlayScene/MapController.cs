@@ -27,6 +27,8 @@ public class MapController : MonoBehaviour
     private Coroutine coroutineCreateItem;
     private int duration;
 
+    public Dictionary<int, int> ColectedItems { get => colectedItems; set => colectedItems = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -184,6 +186,7 @@ public class MapController : MonoBehaviour
         Time.timeScale = 0;
         StopCreateItem();
         showItemColected();
+        DontDestroyOnLoad(gameObject);
         endMapUI.SetActive(true);
     }
 
