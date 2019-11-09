@@ -8,7 +8,7 @@ public class HidLeftBar : MonoBehaviour
     public bool isHide = false;
     GameObject HideButton;
     int InOut = 0;
-    float minHide = -60f;
+    float minHide = -63f;
     float maxHide = 0;
     void Start()
     {
@@ -18,7 +18,6 @@ public class HidLeftBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.transform.localPosition.x);
         if(isHide==true)
         {
             if(gameObject.transform.localPosition.x>minHide && InOut%2==0)
