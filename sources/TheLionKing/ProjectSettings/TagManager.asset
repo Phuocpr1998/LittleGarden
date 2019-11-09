@@ -15,6 +15,7 @@ TagManager:
   - TTWater
   - TextWater
   - option_menu
+  - ButtonTuoiCay
   layers:
   - Default
   - TransparentFX
