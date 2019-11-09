@@ -13,12 +13,12 @@ public class TreeEnum : MonoBehaviour
     public Sprite TreeDeath;
     SpriteRenderer sr;
     public GameObject statusWater;
-    float maxScalex;
-    float minScalex = -6;
+    float maxScaleWatery;
+    float minScaleWatery = 0;
     void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        maxScalex = statusWater.transform.localScale.x;
+        maxScaleWatery = statusWater.transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -36,9 +36,18 @@ public class TreeEnum : MonoBehaviour
                 sr.sprite = TreeDeath;
                 break;
         }
-        
-        //Update Enum of Tree
-        
 
+        //Update Enum of Tree
+        DrawWater();
+    }
+
+    void DrawWater()
+    {
+        if(statusWater.transform.localScale.y>minScaleWatery)
+        {
+            float a = statusWater.transform.localScale.y;
+            a -= Time.deltaTime/3600;
+            statusWater.transform.localScale = new Vector3(statusWater.transform.localScale.x, a, statusWater.transform.localScale.z);
+        }
     }
 }

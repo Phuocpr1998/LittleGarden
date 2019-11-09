@@ -6,6 +6,9 @@ TagManager:
   tags:
   - boarder
   - item
+  - MergeCanvas
+  - TreeCanvas
+  - Center
   - map_controller
   layers:
   - Default
