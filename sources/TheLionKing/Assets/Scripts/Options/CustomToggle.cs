@@ -13,7 +13,7 @@ public class CustomToggle: MonoBehaviour
     public void OnTargetClick()
     {
         IsOn = !IsOn;
-        Vector3 newPos = target.transform.position;
+        Vector3 newPos = target.rectTransform.localPosition;
         if (IsOn)
         {
             newPos.x += target.rectTransform.sizeDelta.x / 2;
@@ -21,6 +21,6 @@ public class CustomToggle: MonoBehaviour
         {
             newPos.x -= target.rectTransform.sizeDelta.x / 2;
         }
-        target.transform.position = newPos;
+        target.rectTransform.localPosition = newPos;
     }
 }
