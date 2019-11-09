@@ -10,6 +10,7 @@ TagManager:
   - TreeCanvas
   - Center
   - map_controller
+  - TreeHideButton
   layers:
   - Default
   - TransparentFX
