@@ -15,14 +15,12 @@ public class TreeEnum : MonoBehaviour
     public GameObject statusWater;
     float maxScaleWatery;
     float minScaleWatery = 0;
-    GameObject HideButton;
     //Trạng thái đang tưới cây
     public bool isWatering = false;
     void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
         maxScaleWatery = statusWater.transform.localScale.y;
-        HideButton = GameObject.FindGameObjectWithTag("TreeHideButton");
 
     }
 
