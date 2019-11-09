@@ -6,6 +6,7 @@ public class MapController : MonoBehaviour
 {
     public GameObject[] targets;
     public GameObject[] items;
+    private Dictionary<int, int> colectedItems;
 
     public float timeCreateItem = 0.5f;
 
@@ -18,6 +19,7 @@ public class MapController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        colectedItems = new Dictionary<int, int>();
         targetsLength = targets.Length;
         StartCreateItem(timeCreateItem);
     }
@@ -57,7 +59,6 @@ public class MapController : MonoBehaviour
     Vector3 randomPosition()
     {
         int nid = Random.Range(1, maxRangeRandom);
-        Debug.Log(nid);
         int id = 0;
         if (nid <= (2* maxRangeRandom) /3 && nid > maxRangeRandom / 3)
         {
@@ -72,8 +73,24 @@ public class MapController : MonoBehaviour
 
     GameObject randomItem()
     {
-        int id = Random.Range(0, itemsLength - 1);
+        int nid = Random.Range(1, maxRangeRandom);
+        int id = 0;
+        if (nid > maxRangeRandom / 2)
+        {
+            id = 1;
+        }
         items[id].GetComponent<ItemController>().indexType = id;
         return items[id];
+    }
+
+    public void AddColectedItem(int itemType)
+    {
+        if (colectedItems.ContainsKey(itemType))
+        {
+            colectedItems[itemType] += 1;
+        } else
+        {
+            colectedItems.Add(itemType, 1);
+        }
     }
 }

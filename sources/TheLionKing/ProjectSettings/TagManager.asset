@@ -9,6 +9,7 @@ TagManager:
   - MergeCanvas
   - TreeCanvas
   - Center
+  - map_controller
   layers:
   - Default
   - TransparentFX
