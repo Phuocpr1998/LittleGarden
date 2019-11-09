@@ -15,7 +15,25 @@ public class WateringButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButton(0))
+        {
+            float x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+            float y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+            gameObject.transform.position = new Vector3(x, y , -10.25f);
+        }
+
+        if(Input.GetMouseButtonUp(0))
+        {
+            EndWearing();
+
+        }
+
+    }
+
+    public void EndWearing()
+    {
+        te.isWatering = false;
+        gameObject.SetActive(false);
     }
 
     public void WateringClick()
