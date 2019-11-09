@@ -12,6 +12,7 @@ TagManager:
   - map_controller
   - TreeHideButton
   - TuoiCay
+  - TTWater
   layers:
   - Default
   - TransparentFX

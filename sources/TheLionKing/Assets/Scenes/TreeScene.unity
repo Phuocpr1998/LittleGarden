@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -1.99, z: -16.16}
+  m_LocalPosition: {x: 0.03, y: -1.99, z: -21.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1292,7 +1292,7 @@ RectTransform:
   m_GameObject: {fileID: 587777714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09288179, y: 0.4977829, z: 1}
+  m_LocalScale: {x: 0.094042815, y: 0.4977829, z: 1}
   m_Children: []
   m_Father: {fileID: 147360420}
   m_RootOrder: 2
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19bb0ceda9c7abe4cb6c734791e46438, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc22bd59e8c9ed240947431c62ec8f1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2167,13 +2167,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089399223}
-  m_LocalRotation: {x: -0.5963677, y: 0.37992817, z: -0.3799284, w: 0.5963679}
-  m_LocalPosition: {x: 1.07, y: -1.2, z: 0}
-  m_LocalScale: {x: -0.88, y: 2.410001, z: 1}
+  m_LocalRotation: {x: -0.66958064, y: 0.22729194, z: -0.22729224, w: 0.66958076}
+  m_LocalPosition: {x: -2.9, y: 1.9, z: 0}
+  m_LocalScale: {x: -0.5347822, y: 2.410001, z: 0.8252}
   m_Children: []
   m_Father: {fileID: 1466806604}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -25, y: 89.99999, z: -90}
+  m_LocalEulerAnglesHint: {x: -52.5, y: 89.99999, z: -90}
 --- !u!199 &1089399225
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -2951,7 +2951,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.13
+      value: 0.26
       mode: 0
       spread: 0
       speed:
@@ -7425,7 +7425,7 @@ RectTransform:
   m_GameObject: {fileID: 1326813560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09288179, y: 0.4977829, z: 1}
+  m_LocalScale: {x: 0.1298667, y: 0.4977829, z: 1}
   m_Children: []
   m_Father: {fileID: 147360420}
   m_RootOrder: 1
@@ -7453,7 +7453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19bb0ceda9c7abe4cb6c734791e46438, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7d57cdd721747f41b363f99d156df94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7642,6 +7642,7 @@ GameObject:
   - component: {fileID: 1466806604}
   - component: {fileID: 1466806603}
   - component: {fileID: 1466806605}
+  - component: {fileID: 1466806606}
   m_Layer: 0
   m_Name: TuoiCayObj
   m_TagString: TuoiCay
@@ -7686,8 +7687,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 23
-  m_Sprite: {fileID: 21300000, guid: 7373213d309f09a449d240363326407c, type: 3}
+  m_SortingOrder: 27
+  m_Sprite: {fileID: 21300000, guid: 4629c37b49e1ede488750bd52e62b4ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7705,14 +7706,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466806602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 1.08, z: 0}
-  m_LocalScale: {x: -0.5375, y: 0.60033, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.32091972, w: 0.9471064}
+  m_LocalPosition: {x: 0.79, y: 1.16, z: 0}
+  m_LocalScale: {x: 0.32250002, y: 0.27206454, z: 1}
   m_Children:
   - {fileID: 1089399224}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 37.437}
 --- !u!114 &1466806605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7725,6 +7726,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d80d9e02af38854480a6c0c301d2a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1466806606
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466806602}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.39, y: 4.35}
+    newSize: {x: 2.22, y: 2.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.22, y: 2.22}
+  m_EdgeRadius: 0
 --- !u!1 &1502273838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8849,7 +8876,7 @@ GameObject:
   - component: {fileID: 1893282445}
   m_Layer: 5
   m_Name: Draw3
-  m_TagString: Untagged
+  m_TagString: TTWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

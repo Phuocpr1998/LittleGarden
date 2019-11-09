@@ -18,21 +18,22 @@ public class DrawWater : MonoBehaviour
     {
         if(gameObject.transform.localScale.y>minScaley)
         {
-            if(te.isWatering==false)
+            float y = gameObject.transform.localScale.y;
+            y -= Time.deltaTime / 30;
+            gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+            if(gameObject.CompareTag("TTWater"))
             {
-                float a = gameObject.transform.localScale.y;
-                a -= Time.deltaTime / 20;
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
-            }
-            else
-            {
-                if(gameObject.transform.localScale.y <maxScaley)
+                if (te.isWatering == true)
                 {
-                    float a = gameObject.transform.localScale.y;
-                    a += Time.deltaTime / 20;
-                    gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
+                    if (gameObject.transform.localScale.y < maxScaley)
+                    {
+                        float a = gameObject.transform.localScale.y;
+                        a += Time.deltaTime / 20;
+                        gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
+                    }
                 }
             }
+
         }
     }
 }
