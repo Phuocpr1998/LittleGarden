@@ -8,7 +8,7 @@ public class HidLeftBar : MonoBehaviour
     public bool isHide = false;
     GameObject HideButton;
     int InOut = 0;
-    float minHide = -60f;
+    float minHide = -63f;
     float maxHide = 0;
     void Start()
     {
