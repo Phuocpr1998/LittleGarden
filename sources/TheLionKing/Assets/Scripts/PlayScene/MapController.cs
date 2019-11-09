@@ -11,6 +11,7 @@ public class MapController : MonoBehaviour
     public GameObject loadingScreen;
 
     public GameObject[] targets;
+    public GameObject[] lineTargets;
     public GameObject[] items;
     public int maxRangeRandom = 100;
     public int mapDuration = 30; // second
@@ -81,12 +82,14 @@ public class MapController : MonoBehaviour
 
     void CreateOneItem()
     {
-        Vector3 posItem = randomPosition();
+        int targetIndex = randomTargetIndex();
+        Vector3 posItem = targets[targetIndex].transform.position;
         GameObject item = Instantiate(randomItem());
+        item.GetComponent<ItemController>().vecDrirection = lineTargets[targetIndex].transform.position - posItem;
         item.transform.position = posItem;
     }
 
-    Vector3 randomPosition()
+    int randomTargetIndex()
     {
         int nid = Random.Range(1, maxRangeRandom);
         int id = 0;
@@ -98,7 +101,7 @@ public class MapController : MonoBehaviour
         {
             id = 2;
         }
-        return targets[id].transform.position;
+        return id;
     }
 
     GameObject randomItem()

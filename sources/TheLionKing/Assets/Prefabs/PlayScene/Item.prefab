@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  indexType: 0
+  vecDrirection: {x: 0, y: 0, z: 0}
 --- !u!60 &3372423686510488242
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -139,6 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  indexType: 0
+  vecDrirection: {x: -100, y: -100, z: -100}
 --- !u!50 &3372423686510488240
 Rigidbody2D:
   serializedVersion: 4
