@@ -19,18 +19,22 @@ public class WateringButton : MonoBehaviour
         {
             float x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
             float y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-            gameObject.transform.position = new Vector2(x, y);
+            gameObject.transform.position = new Vector3(x, y , -10.25f);
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-            gameObject.SetActive(false);
+            EndWearing();
 
         }
 
     }
 
- 
+    public void EndWearing()
+    {
+        te.isWatering = false;
+        gameObject.SetActive(false);
+    }
 
     public void WateringClick()
     {
