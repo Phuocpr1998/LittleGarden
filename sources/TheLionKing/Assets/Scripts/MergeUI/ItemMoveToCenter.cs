@@ -20,6 +20,7 @@ public class ItemMoveToCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (gm.isMerge==true)
         {
             Direc = (Vector2)Center.transform.position - (Vector2)gameObject.transform.position;

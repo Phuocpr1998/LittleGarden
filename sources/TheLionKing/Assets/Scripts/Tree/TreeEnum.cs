@@ -38,7 +38,7 @@ public class TreeEnum : MonoBehaviour
         }
 
         //Update Enum of Tree
-        DrawWater();
+       // DrawWater();
     }
 
     void DrawWater()
