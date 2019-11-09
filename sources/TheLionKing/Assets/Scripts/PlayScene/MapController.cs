@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
+    public UnityEngine.UI.VerticalLayoutGroup listItemsColected;
+    public UnityEngine.UI.Text textTimer;
+    public GameObject endMapUI;
+
     public GameObject[] targets;
     public GameObject[] items;
-    private Dictionary<int, int> colectedItems;
+    public int maxRangeRandom = 100;
+    public int mapDuration = 30; // second
 
     public float timeCreateItem = 0.5f;
 
     private int targetsLength = 0;
     private int itemsLength = 0;
-    public int maxRangeRandom = 100;
+    private Dictionary<int, int> colectedItems;
 
-    Coroutine coroutineCreateItem;
+    private Coroutine coroutineCreateItem;
+    private int duration;
 
     // Start is called before the first frame update
     void Start()
     {
+        endMapUI.SetActive(false);
+        duration = 0;
         colectedItems = new Dictionary<int, int>();
         targetsLength = targets.Length;
+
         StartCreateItem(timeCreateItem);
+        StartCoroutine(MapDurationTimerCountdown());
     }
 
     // Update is called once per frame
@@ -46,6 +56,24 @@ public class MapController : MonoBehaviour
         {
             CreateOneItem();
             yield return new WaitForSeconds(seconds);
+        }
+    }
+
+    IEnumerator MapDurationTimerCountdown()
+    {
+        while (true)
+        {
+            duration += 1;
+            textTimer.text = duration.ToString();
+            if (duration >= mapDuration)
+            {
+                EndMap();
+                yield break;
+            }
+            else
+            {
+                yield return new WaitForSeconds(1);
+            }
         }
     }
 
@@ -93,4 +121,35 @@ public class MapController : MonoBehaviour
             colectedItems.Add(itemType, 1);
         }
     }
+    
+    void showItemColected()
+    {
+        RectTransform parent = listItemsColected.GetComponent<RectTransform>();
+        RectTransform parentOfParent = listItemsColected.GetComponent<RectTransform>().parent.parent.GetComponent<RectTransform>();
+        foreach (KeyValuePair<int, int> entry in colectedItems)
+        {
+            GameObject g = new GameObject(entry.Key.ToString());
+            UnityEngine.UI.Text t = g.AddComponent<UnityEngine.UI.Text>();
+            g.transform.SetParent(parent);
+            g.AddComponent<UnityEngine.UI.LayoutElement>().flexibleHeight = 30;
+            t.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
+            t.text = entry.Value.ToString();
+            t.alignment = TextAnchor.MiddleCenter;
+            t.rectTransform.sizeDelta = new Vector2(parentOfParent.sizeDelta.x, 30);
+        }
+    }
+
+    void EndMap()
+    {
+        Time.timeScale = 0;
+        StopCreateItem();
+        showItemColected();
+        endMapUI.SetActive(true);
+    }
+
+    void StartToTreeMap()
+    {
+
+    }
+
 }
