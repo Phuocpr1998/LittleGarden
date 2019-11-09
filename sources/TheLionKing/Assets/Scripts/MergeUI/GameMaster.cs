@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeGrow : MonoBehaviour
+public class GameMaster : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool isMerge = false;
+    public int CountItem = 6;
     void Start()
     {
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -15,4 +18,8 @@ public class TreeGrow : MonoBehaviour
         
     }
 
+    public void ShowMergeCanvas()
+    {
+        gameObject.SetActive(true);
+    }
 }
