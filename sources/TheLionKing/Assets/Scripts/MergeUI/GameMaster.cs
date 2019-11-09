@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameMaster : MonoBehaviour
     private GameObject[] items;
     private Dictionary<int, int> colectedItems;
 
+    public GameObject[] slotItem;
+
     void Start()
     {
         gameObject.SetActive(true);
@@ -20,9 +23,28 @@ public class GameMaster : MonoBehaviour
         mapController = GameObject.FindGameObjectWithTag("map_controller");
         if (mapController != null)
         {
+            slotItem = GameObject.FindGameObjectsWithTag("SlotItem");
+            //all items
             items = mapController.GetComponent<MapController>().items;
+            //Item nhat duoc + length
             colectedItems = mapController.GetComponent<MapController>().ColectedItems;
+            int i = 0;
+            foreach(KeyValuePair<int, int> dictionaryEntry in colectedItems)
+            {
+                GameObject item = items[dictionaryEntry.Key];
+                int sum = dictionaryEntry.Value;
+                slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+                //item.GetComponent<SpriteRenderer>().sprite;
+            }
+            for(int z = i; z<9; z++)
+            {
+                slotItem[z].GetComponent<Image>().enabled = false;
+            }
             Destroy(mapController);
+        }
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
 

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7898667}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 163873834}
   - component: {fileID: 163873836}
   m_Layer: 0
-  m_Name: Slot
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 505376048}
   - component: {fileID: 505376050}
   m_Layer: 0
-  m_Name: Slot1 (4)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1269,7 +1269,7 @@ Transform:
   m_Children:
   - {fileID: 1589675621}
   m_Father: {fileID: 1138970109}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &505376050
 SpriteRenderer:
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 566955887}
   - component: {fileID: 566955888}
   m_Layer: 0
-  m_Name: Slot1 (5)
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2130,7 +2130,7 @@ GameObject:
   - component: {fileID: 667298372}
   - component: {fileID: 667298373}
   m_Layer: 0
-  m_Name: Slot1 (6)
+  m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7470,7 +7470,7 @@ GameObject:
   - component: {fileID: 873060009}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7507,7 +7507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7557,7 +7557,7 @@ GameObject:
   - component: {fileID: 896182858}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7594,7 +7594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7811,7 +7811,7 @@ GameObject:
   - component: {fileID: 1033952540}
   - component: {fileID: 1033952542}
   m_Layer: 0
-  m_Name: Slot1 (1)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8178,7 +8178,7 @@ GameObject:
   - component: {fileID: 1103091880}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8215,7 +8215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8375,9 +8375,9 @@ RectTransform:
   - {fileID: 1616664738}
   - {fileID: 1033952540}
   - {fileID: 163873834}
+  - {fileID: 505376048}
   - {fileID: 1298534397}
   - {fileID: 1260391336}
-  - {fileID: 505376048}
   - {fileID: 566955887}
   - {fileID: 667298372}
   - {fileID: 1657153628}
@@ -8518,7 +8518,7 @@ GameObject:
   - component: {fileID: 1212214385}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8555,7 +8555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8602,7 +8602,7 @@ GameObject:
   - component: {fileID: 1260391336}
   - component: {fileID: 1260391338}
   m_Layer: 0
-  m_Name: Slot1 (3)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8621,7 +8621,7 @@ Transform:
   m_Children:
   - {fileID: 1537555051}
   m_Father: {fileID: 1138970109}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1260391338
 SpriteRenderer:
@@ -8811,7 +8811,7 @@ GameObject:
   - component: {fileID: 1298534397}
   - component: {fileID: 1298534399}
   m_Layer: 0
-  m_Name: Slot1 (2)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8830,7 +8830,7 @@ Transform:
   m_Children:
   - {fileID: 530044473}
   m_Father: {fileID: 1138970109}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1298534399
 SpriteRenderer:
@@ -8969,7 +8969,7 @@ GameObject:
   - component: {fileID: 1334910178}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9019,7 +9019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9056,7 +9056,7 @@ GameObject:
   - component: {fileID: 1395028321}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9093,7 +9093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9884,7 +9884,7 @@ GameObject:
   - component: {fileID: 1616664738}
   - component: {fileID: 1616664739}
   m_Layer: 0
-  m_Name: Slot1
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9965,7 +9965,7 @@ GameObject:
   - component: {fileID: 1657153628}
   - component: {fileID: 1657153629}
   m_Layer: 0
-  m_Name: Slot1 (7)
+  m_Name: 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10251,7 +10251,7 @@ GameObject:
   - component: {fileID: 1683906552}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10301,7 +10301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15621,7 +15621,7 @@ GameObject:
   - component: {fileID: 1854927477}
   m_Layer: 0
   m_Name: ItemTemp
-  m_TagString: item
+  m_TagString: SlotItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15671,7 +15671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -16061,6 +16061,7 @@ MonoBehaviour:
   isMerge: 0
   CountItem: 6
   ReturnHomeFlower: {fileID: 1606804690}
+  slotItem: []
 --- !u!1 &1975846049
 GameObject:
   m_ObjectHideFlags: 0

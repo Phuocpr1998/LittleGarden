@@ -19,6 +19,7 @@ TagManager:
   - item_sun
   - ButtonTuoiCay
   - LeftBar
+  - SlotItem
   layers:
   - Default
   - TransparentFX
