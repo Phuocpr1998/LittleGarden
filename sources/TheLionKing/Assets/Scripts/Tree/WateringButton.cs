@@ -8,11 +8,15 @@ public class WateringButton : MonoBehaviour
     TreeEnum te;
     TextMeshProUGUI phanTramWater;
     public GameObject ButtonTuoiCay;
+    HidLeftBar HideLeft;
+
     void Start()
     {
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
         gameObject.SetActive(false);
         phanTramWater = GameObject.FindGameObjectWithTag("TextWater").GetComponent<TextMeshProUGUI>();
+        HideLeft = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<HidLeftBar>();
+
     }
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class WateringButton : MonoBehaviour
             gameObject.transform.position = new Vector3(x, y , -10.25f);
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) && te.isWatering==true)
         {
             phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
            
@@ -45,6 +49,7 @@ public class WateringButton : MonoBehaviour
 
     public void WateringClick()
     {
+        HideLeft.ButtonHideClick();
         te.isWatering = true;
         gameObject.SetActive(true);
     }

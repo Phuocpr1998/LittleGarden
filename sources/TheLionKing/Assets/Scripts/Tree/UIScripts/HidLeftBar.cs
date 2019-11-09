@@ -7,18 +7,22 @@ public class HidLeftBar : MonoBehaviour
     // Start is called before the first frame update
     public bool isHide = false;
     GameObject HideButton;
+    public TreeEnum te;
     int InOut = 0;
-    float minHide = -63f;
+    float minHide = -62.5f;
     float maxHide = -41f;
     void Start()
     {
         HideButton = GameObject.FindGameObjectWithTag("TreeHideButton");
+        te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isHide==true)
+
+        if (isHide==true)
         {
             if(gameObject.transform.localPosition.x>minHide && InOut%2==0)
             {

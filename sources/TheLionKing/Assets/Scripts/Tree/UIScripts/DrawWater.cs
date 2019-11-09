@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class DrawWater : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -31,7 +33,7 @@ public class DrawWater : MonoBehaviour
             {
                 if (te.isWatering == true)
                 {
-                    ButtonTuoiCay.SetActive(false);
+                    ButtonTuoiCay.GetComponent<Button>().enabled = false;
 
                     wt = GameObject.FindGameObjectWithTag("TuoiCay").GetComponent<WateringButton>();
 
@@ -39,7 +41,6 @@ public class DrawWater : MonoBehaviour
                     {
                         float a = gameObject.transform.localScale.y;
                         sumScale += 0.01f*Time.deltaTime;
-                        Debug.Log(sumScale);
                         a += 0.01f * Time.deltaTime;
                         gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
 
@@ -60,7 +61,7 @@ public class DrawWater : MonoBehaviour
                 else
                 {
                     //Khi không tưới thì  giảm 
-                    ButtonTuoiCay.SetActive(true);
+                    ButtonTuoiCay.GetComponent<Button>().enabled = true;
                     float y = gameObject.transform.localScale.y;
                     y -= 0.005f * Time.deltaTime;
                     gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);

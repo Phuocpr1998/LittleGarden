@@ -18,6 +18,7 @@ TagManager:
   - item_water
   - item_sun
   - ButtonTuoiCay
+  - LeftBar
   layers:
   - Default
   - TransparentFX
