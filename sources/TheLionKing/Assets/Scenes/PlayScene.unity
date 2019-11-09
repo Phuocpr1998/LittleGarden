@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -886,7 +886,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583255262}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1230576922}
+        m_MethodName: StartToTreeMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583255262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ti\u1EBFp t\u1EE5c"
+  m_Text: "Quay l\u1EA1i"
 --- !u!222 &1050222484
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1567,6 +1578,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1230576922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6363910445942443456, guid: ced00add15974344daa7190e7f439b91,
+    type: 3}
+  m_PrefabInstance: {fileID: 6363910444985692744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df8386ad4ce0c04c9857eaa4291907a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1257304803
 GameObject:
   m_ObjectHideFlags: 0

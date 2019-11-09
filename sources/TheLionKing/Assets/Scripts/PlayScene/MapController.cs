@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapController : MonoBehaviour
 {
     public UnityEngine.UI.VerticalLayoutGroup listItemsColected;
     public UnityEngine.UI.Text textTimer;
     public GameObject endMapUI;
+    public GameObject loadingScreen;
 
     public GameObject[] targets;
     public GameObject[] items;
@@ -147,9 +149,28 @@ public class MapController : MonoBehaviour
         endMapUI.SetActive(true);
     }
 
-    void StartToTreeMap()
+    public void StartToTreeMap()
     {
+        StartCoroutine(LoadingTreeScene());
+    }
 
+    IEnumerator LoadingTreeScene()
+    {
+        // loadingScreen.SetActive(true);
+        AsyncOperation async = SceneManager.LoadSceneAsync("TreeScene");
+        async.allowSceneActivation = false;
+        while (!async.isDone)
+        {
+            if (async.progress >= 0.9f)
+            {
+                if (Input.anyKeyDown)
+                {
+                    async.allowSceneActivation = true;
+                    Time.timeScale = 1f;
+                }
+            }
+            yield return null;
+        }
     }
 
 }
