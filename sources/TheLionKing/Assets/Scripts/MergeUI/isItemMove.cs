@@ -13,7 +13,7 @@ public class isItemMove : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("MergeCanvas").GetComponent<GameMaster>();
 
     }
-    private void OnMouseDown()
+    public void OnMouseClickButton()
     {
         gm.isMerge = true;
     }

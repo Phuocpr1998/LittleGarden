@@ -18,7 +18,6 @@ public class HidLeftBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.transform.localPosition.x);
         if(isHide==true)
         {
             if(gameObject.transform.localPosition.x>minHide && InOut%2==0)
