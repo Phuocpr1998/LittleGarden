@@ -11,12 +11,12 @@ public class ItemController : MonoBehaviour
     private float scaleStep = -1;
     private float maxScale = 0.35f;
     private float minScale = 0.1f;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D myRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
         gameObject.transform.localScale = new Vector3(minScale, minScale, gameObject.transform.localScale.z);
         scaleStep = -1;
 
@@ -28,7 +28,7 @@ public class ItemController : MonoBehaviour
     {
         if (vecDrirection - new Vector3(-100, -100, -100) != Vector3.zero)
         {
-            rigidbody.velocity = vecDrirection * 0.5f;
+            myRigidbody.velocity = vecDrirection * 0.5f;
             if (scaleStep == -1)
             {
                 float duration = Mathf.Sqrt(vecDrirection.x * vecDrirection.x + vecDrirection.y * vecDrirection.y);
