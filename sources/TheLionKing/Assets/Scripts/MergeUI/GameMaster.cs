@@ -18,6 +18,11 @@ public class GameMaster : MonoBehaviour
         
     }
 
+    public void HideMergeCanvas()
+    {
+        gameObject.SetActive(false);
+
+    }
     public void ShowMergeCanvas()
     {
         gameObject.SetActive(true);

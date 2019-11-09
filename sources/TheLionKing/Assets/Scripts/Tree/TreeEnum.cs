@@ -43,13 +43,5 @@ public class TreeEnum : MonoBehaviour
        // DrawWater();
     }
 
-    void DrawWater()
-    {
-        if(statusWater.transform.localScale.y>minScaleWatery)
-        {
-            float a = statusWater.transform.localScale.y;
-            a -= Time.deltaTime/3600;
-            statusWater.transform.localScale = new Vector3(statusWater.transform.localScale.x, a, statusWater.transform.localScale.z);
-        }
-    }
+ 
 }

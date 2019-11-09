@@ -17,6 +17,7 @@ TagManager:
   - option_menu
   - item_water
   - item_sun
+  - ButtonTuoiCay
   layers:
   - Default
   - TransparentFX
