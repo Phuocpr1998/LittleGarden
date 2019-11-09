@@ -25,15 +25,15 @@ public class ItemMoveToCenter : MonoBehaviour
         {
             Direc = (Vector2)Center.transform.position - (Vector2)gameObject.transform.position;
             gameObject.transform.position = ((Vector2)gameObject.transform.position + Direc * 5 * Time.deltaTime);
-            if (Direc.magnitude < 0.1f)
+            if (Direc.magnitude < 0.02f)
             {
-                Destroy(gameObject);
                 gm.CountItem--;
             }
         }
 
         if(gm.CountItem==0)
         {
+            Destroy(gameObject);
             gm.isMerge = false;
             anim.SetBool("isRing", false);
         }
