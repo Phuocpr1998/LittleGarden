@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour
     public int CountItem = 6;
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
