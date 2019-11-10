@@ -34,6 +34,7 @@ public class GameMaster : MonoBehaviour
         }
         return false;
     }
+
     void Start()
     {
         gameObject.SetActive(true);
@@ -69,7 +70,21 @@ public class GameMaster : MonoBehaviour
                     }
                     slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
                 }
-              
+                else if (item.CompareTag("item_water"))
+                {
+                }
+                else if (item.CompareTag("item_sun"))
+                {
+                    float sum = GameObject.FindGameObjectWithTag("TTAnhSang").GetComponent<DrawWater>().PhanTramNuoc + soluong * 25;
+                    if (sum >= 100)
+                    {
+                        GameObject.FindGameObjectWithTag("TTAnhSang").GetComponent<DrawWater>().SetPercent(100);
+                    }
+                    else
+                    {
+                        GameObject.FindGameObjectWithTag("TTAnhSang").GetComponent<DrawWater>().SetPercent(sum);
+                    }
+                }
             }
             for(int z = i; z<9; z++)
             {

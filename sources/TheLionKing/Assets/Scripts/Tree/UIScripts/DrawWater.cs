@@ -21,7 +21,6 @@ public class DrawWater : MonoBehaviour
   
     void Start()
     {
-
         saveDraw = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
         ButtonTuoiCay = GameObject.FindGameObjectWithTag("ButtonTuoiCay");
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
@@ -32,12 +31,9 @@ public class DrawWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
         PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
-
 
 
         if (gameObject.transform.localScale.y>minScaley)
@@ -78,12 +74,16 @@ public class DrawWater : MonoBehaviour
                 {
                     //Khi không tưới thì  giảm 
                     ButtonTuoiCay.GetComponent<Button>().enabled = true;
-                   
                 }
             }
-
-
-
         }
     }
+
+    public void SetPercent(float percent)
+    {
+        PhanTramNuoc = percent;
+        float y = percent / 200;
+        gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+    }
+
 }
