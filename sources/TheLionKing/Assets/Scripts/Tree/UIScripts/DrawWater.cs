@@ -27,7 +27,6 @@ public class DrawWater : MonoBehaviour
         phanTramWater = GameObject.FindGameObjectWithTag("TextWater").GetComponent<TextMeshProUGUI>();
         countItem = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<CountItemManager>();
         sumScale = 0;
-
     }
 
     // Update is called once per frame
@@ -47,7 +46,6 @@ public class DrawWater : MonoBehaviour
 
         if (gameObject.CompareTag("TTWater"))
         {
-            Debug.Log(sumScale);
             if (te.isWatering == true)
             {
                 ButtonTuoiCay.GetComponent<Button>().enabled = false;

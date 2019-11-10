@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
 
     private int lineTargetIndex;
     private Vector3 oldPosition;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         lineTargetsLength = lineTargets.Length;
         lineTargetIndex = 1;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.IndexOf("item") == -1)
             return;
         GameObject mapController =  GameObject.FindGameObjectWithTag("map_controller");
+        audioSource.Play();
         if (mapController != null)
         {
             mapController.GetComponent<MapController>().AddColectedItem(collision.gameObject.GetComponent<ItemController>().indexType);
