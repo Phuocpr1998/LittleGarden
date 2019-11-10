@@ -23,7 +23,6 @@ public class BonPhan : MonoBehaviour
         t = Time.time;
         maxUp = 0;
         sumScale = 0;
-
     }
 
     // Update is called once per frame
