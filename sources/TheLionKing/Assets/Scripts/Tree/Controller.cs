@@ -8,11 +8,12 @@ public class Controller : MonoBehaviour
 {
     public GameObject loadingScreen;
     public Slider loadingSlider;
+    public CountItemManager SlItem;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SlItem = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<CountItemManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Controller : MonoBehaviour
 
     public void ChangeScenePlay()
     {
+        PlayerPrefs.SetInt("slNuoc", SlItem.slNuoc);
         StartToTreeMap();
     }
 
