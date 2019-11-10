@@ -33,7 +33,10 @@ public class GameMaster : MonoBehaviour
             {
                 GameObject item = items[dictionaryEntry.Key];
                 int sum = dictionaryEntry.Value;
-                slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+               if(!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
+                {
+                    slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+                }
                 //item.GetComponent<SpriteRenderer>().sprite;
             }
             for(int z = i; z<9; z++)

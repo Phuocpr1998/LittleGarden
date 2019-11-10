@@ -14,11 +14,15 @@ public class DrawWater : MonoBehaviour
     WateringButton wt;
     public TextMeshProUGUI phanTramWater;
     public GameObject ButtonTuoiCay;
+    public CountItemManager countItem;
+  
+
     void Start()
     {
         ButtonTuoiCay = GameObject.FindGameObjectWithTag("ButtonTuoiCay");
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
         phanTramWater = GameObject.FindGameObjectWithTag("TextWater").GetComponent<TextMeshProUGUI>();
+        countItem = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<CountItemManager>();
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class DrawWater : MonoBehaviour
     {
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
-
+        
         if (gameObject.transform.localScale.y>minScaley)
         {
             if(gameObject.CompareTag("TTWater"))
@@ -50,8 +54,8 @@ public class DrawWater : MonoBehaviour
                     }
                     else
                     {
-                       
 
+                        countItem.slNuoc -= 1;
                         phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
                         wt.EndWearing();
                         sumScale = 0;
