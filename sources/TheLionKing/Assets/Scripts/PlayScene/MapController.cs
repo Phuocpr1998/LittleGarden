@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class MapController : MonoBehaviour
     public GameObject endMapUI;
     public GameObject loadingScreen;
     public Slider loadingSlider;
+
+    AudioSource audioSource;
+    public AudioMixer audioMixer;
 
     public Font fontText;
 
@@ -45,6 +49,7 @@ public class MapController : MonoBehaviour
         goodItemsLength = goodItems.Length;
         badItemsLength = badItems.Length;
 
+        audioSource = GetComponent<AudioSource>();
         StartCreateItem(timeCreateItem);
         StartCoroutine(MapDurationTimerCountdown());
 
@@ -58,7 +63,6 @@ public class MapController : MonoBehaviour
         {
             badItems[i].GetComponent<ItemController>().Score = (i + 1) * (-3);
         }
-
     }
 
     // Update is called once per frame
@@ -67,11 +71,13 @@ public class MapController : MonoBehaviour
 
     void StartCreateItem(float seconds)
     {
+        audioSource.Play();
         coroutineCreateItem = StartCoroutine(CreateItems(seconds));
     }
 
     void StopCreateItem()
     {
+        audioSource.Stop();
         if (coroutineCreateItem != null) {
             StopCoroutine(coroutineCreateItem);
         }
