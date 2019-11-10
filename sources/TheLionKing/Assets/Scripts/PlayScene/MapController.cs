@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MapController : MonoBehaviour
 {
-    public UnityEngine.UI.VerticalLayoutGroup listItemsColected;
-    public UnityEngine.UI.Text textTimer;
+    public VerticalLayoutGroup listItemsColected;
+    public Text textTimer;
     public GameObject endMapUI;
     public GameObject loadingScreen;
     public Slider loadingSlider;
@@ -16,14 +16,16 @@ public class MapController : MonoBehaviour
 
     public GameObject[] targets;
     public GameObject[] lineTargets;
-    public GameObject[] items;
+    public GameObject[] goodItems;
+    public GameObject[] badItems;
     public int maxRangeRandom = 100;
     public int mapDuration = 30; // second
 
     public float timeCreateItem = 0.5f;
 
     private int targetsLength = 0;
-    private int itemsLength = 0;
+    private int goodItemsLength = 0;
+    private int badItemsLength = 0;
     private Dictionary<int, int> colectedItems;
 
     private Coroutine coroutineCreateItem;
@@ -40,10 +42,23 @@ public class MapController : MonoBehaviour
         colectedItems = new Dictionary<int, int>();
 
         targetsLength = targets.Length;
-        itemsLength = items.Length;
+        goodItemsLength = goodItems.Length;
+        badItemsLength = badItems.Length;
 
         StartCreateItem(timeCreateItem);
         StartCoroutine(MapDurationTimerCountdown());
+
+        // set score for item
+        for (int i = 0; i < goodItemsLength; i++)
+        {
+            goodItems[i].GetComponent<ItemController>().Score = i + 2;
+        }
+
+        for (int i = 0; i < badItemsLength; i++)
+        {
+            badItems[i].GetComponent<ItemController>().Score = i - 3;
+        }
+
     }
 
     // Update is called once per frame
@@ -93,7 +108,8 @@ public class MapController : MonoBehaviour
     {
         int targetIndex = randomTargetIndex();
         Vector3 posItem = targets[targetIndex].transform.position;
-        GameObject item = Instantiate(randomItem());
+        GameObject itemParent = randomItem();
+        GameObject item = Instantiate(itemParent);
         item.GetComponent<ItemController>().vecDrirection = lineTargets[targetIndex].transform.position - posItem;
         item.transform.position = posItem;
     }
@@ -117,23 +133,32 @@ public class MapController : MonoBehaviour
     {
         int nid = Random.Range(1, maxRangeRandom);
         int id = 0;
+        int itemsLength = goodItemsLength + badItemsLength;
         for (id = 0; id < itemsLength - 1; id ++)
         {
             if (id * (maxRangeRandom / itemsLength) <= nid && (id + 1) * (maxRangeRandom / itemsLength) > nid)
                 break;
         }
-        items[id].GetComponent<ItemController>().indexType = id;
-        return items[id];
+        if (id < goodItemsLength)
+        {
+            goodItems[id].GetComponent<ItemController>().indexType = id;
+            return goodItems[id];
+        }
+        else
+        {
+            badItems[id - goodItemsLength].GetComponent<ItemController>().indexType = id;
+            return badItems[id - goodItemsLength];
+        }
     }
 
-    public void AddColectedItem(int itemType)
+    public void AddColectedItem(int indexType)
     {
-        if (colectedItems.ContainsKey(itemType))
+        if (colectedItems.ContainsKey(indexType))
         {
-            colectedItems[itemType] += 1;
+            colectedItems[indexType] += 1;
         } else
         {
-            colectedItems.Add(itemType, 1);
+            colectedItems.Add(indexType, 1);
         }
     }
     
@@ -157,7 +182,13 @@ public class MapController : MonoBehaviour
             c1.transform.parent = p.transform;
             Image image = c1.AddComponent<Image>();
             image.rectTransform.localScale = new Vector3(0.2f, 0.2f, 0);
-            image.sprite = items[entry.Key].GetComponent<SpriteRenderer>().sprite;
+            if (entry.Key < goodItemsLength)
+            {
+                image.sprite = goodItems[entry.Key].GetComponent<SpriteRenderer>().sprite;
+            } else
+            {
+                image.sprite = badItems[entry.Key - goodItemsLength].GetComponent<SpriteRenderer>().sprite;
+            }
             image.rectTransform.sizeDelta = new Vector2(255, 30);
             image.gameObject.AddComponent<LayoutElement>().flexibleHeight = 30;
             image.gameObject.GetComponent<LayoutElement>().flexibleWidth = 30;
