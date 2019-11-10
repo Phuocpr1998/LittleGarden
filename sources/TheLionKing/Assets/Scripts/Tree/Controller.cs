@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
+    public GameObject optionsScreen;
     public GameObject loadingScreen;
     public Slider loadingSlider;
     public CountItemManager SlItem;
@@ -14,6 +15,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         SlItem = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<CountItemManager>();
+        optionsScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,5 +52,10 @@ public class Controller : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void OnOptionsButtonClick()
+    {
+        optionsScreen.SetActive(true);
     }
 }

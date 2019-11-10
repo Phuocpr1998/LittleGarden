@@ -16,8 +16,6 @@ public class DrawWater : MonoBehaviour
     public GameObject ButtonTuoiCay;
     public CountItemManager countItem;
 
-  
-
     void Start()
     {
         ButtonTuoiCay = GameObject.FindGameObjectWithTag("ButtonTuoiCay");

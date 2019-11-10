@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 177393749}
   - component: {fileID: 177393748}
   - component: {fileID: 177393750}
+  - component: {fileID: 177393751}
   m_Layer: 0
   m_Name: Tree
   m_TagString: TreeCanvas
@@ -672,6 +673,18 @@ MonoBehaviour:
   TreeDeath: {fileID: 21300000, guid: 65f3949ea2adf124db8ab4bea34526ec, type: 3}
   statusWater: {fileID: 663216485}
   isWatering: 0
+--- !u!114 &177393751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177393747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf49ad19c1309f45bec8df113686622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &204617325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,7 +2390,7 @@ GameObject:
   - component: {fileID: 639749252}
   - component: {fileID: 639749251}
   m_Layer: 5
-  m_Name: Pause (1)
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9771,8 +9784,9 @@ GameObject:
   - component: {fileID: 1502273839}
   - component: {fileID: 1502273841}
   - component: {fileID: 1502273840}
+  - component: {fileID: 1502273842}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9833,6 +9847,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502273838}
   m_CullTransparentMesh: 0
+--- !u!114 &1502273842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502273838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1502273840}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1843357664}
+        m_MethodName: OnOptionsButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1529225256
 GameObject:
   m_ObjectHideFlags: 0
@@ -11271,6 +11339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646f2f6d22285b8489393c0399988cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionsScreen: {fileID: 1151389920}
   loadingScreen: {fileID: 589368197}
   loadingSlider: {fileID: 589368198}
   SlItem: {fileID: 0}
