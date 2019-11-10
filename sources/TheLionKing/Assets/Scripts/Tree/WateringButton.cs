@@ -44,6 +44,9 @@ public class WateringButton : MonoBehaviour
 
     public void WateringClick()
     {
+        if (PlayerPrefs.GetInt("slNuoc") == 0)
+            return;
+
         GameObject.FindGameObjectWithTag("LeftBar").GetComponent<HidLeftBar>().ButtonHideClick();
         GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>().isWatering = true;
         gameObject.SetActive(true);
