@@ -54,6 +54,7 @@ public class DrawWater : MonoBehaviour
                     {
 
                         countItem.slNuoc -= 1;
+                        PlayerPrefs.SetInt("slNuoc", countItem.slNuoc);
                         phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
                         wt.EndWearing();
                         sumScale = 0;

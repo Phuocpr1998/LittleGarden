@@ -31,7 +31,6 @@ public class GameMaster : MonoBehaviour
             {
                 slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
             }
-            //item.GetComponent<SpriteRenderer>().sprite;
         }
         return false;
     }
