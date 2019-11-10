@@ -17,6 +17,7 @@ public class DrawWater : MonoBehaviour
     public CountItemManager countItem;
     public SaveDraw saveDraw;
 
+    public float PhanTramNuoc;
   
 
     void Start()
@@ -35,22 +36,11 @@ public class DrawWater : MonoBehaviour
 
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
-
+        PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
 
         //Set Save Scale
 
-        if (gameObject.CompareTag("TTWater"))
-        {
-            PlayerPrefs.SetFloat("ScaleOfWater", gameObject.transform.localScale.y);
-        }
-        else if (gameObject.CompareTag("TTAnhSang"))
-        {
-            PlayerPrefs.SetFloat("ScaleOfLight", gameObject.transform.localScale.y);
-        }
-        else if (gameObject.CompareTag("TTPhanBon"))
-        {
-            PlayerPrefs.SetFloat("ScalePhanBon", gameObject.transform.localScale.y);
-        }
+        Debug.Log(PhanTramNuoc);
 
 
 

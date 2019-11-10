@@ -9,6 +9,13 @@ public class CenterMove : MonoBehaviour
     public GameMaster gm;
     public GameObject ObjGameMaster;
     public GameObject VididiChuyen;
+
+    public GameObject DrawWater;
+    public GameObject DrawLight;
+    public GameObject DrawPhanBon;
+
+    SaveDraw Save;
+
     Vector2 Direc;
 
     // Update is called once per frame
@@ -17,6 +24,7 @@ public class CenterMove : MonoBehaviour
         Direc = new Vector2(50, 50);
         gm = GameObject.FindGameObjectWithTag("MergeCanvas").GetComponent<GameMaster>();
         ObjGameMaster = GameObject.FindGameObjectWithTag("MergeCanvas");
+        Save = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
     }
     void Update()
     {
@@ -33,6 +41,8 @@ public class CenterMove : MonoBehaviour
 
         if(Direc.magnitude<0.1f && gm.CountItem==0 )
         {
+            DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, Save.ScaleOfWater);
+            Debug.Log(Save.ScaleOfWater);
             ObjGameMaster.SetActive(false);
         }
     }

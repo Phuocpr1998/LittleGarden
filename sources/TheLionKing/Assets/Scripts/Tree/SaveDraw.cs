@@ -23,13 +23,13 @@ public class SaveDraw : MonoBehaviour
         //Debug.Log(PlayerPrefs.HasKey("ScaleOfWater"));
         //set scale
 
-        ScaleOfWater = PlayerPrefs.GetFloat("ScaleOfWater");
+        //ScaleOfWater = PlayerPrefs.GetFloat("ScaleOfWater");
         //DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScaleOfWater);
-        Debug.Log(ScaleOfWater);
-        //float ScaleLight = PlayerPrefs.GetFloat("ScaleOfLight");
-        //DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScaleLight);
+        //Debug.Log(ScaleOfWater);
+        //ScaleOfLight = PlayerPrefs.GetFloat("ScaleOfLight");
+        //DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScaleOfLight);
 
-        //float Scaleypb = PlayerPrefs.GetFloat("ScalePhanBon");
-        //DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, Scaleypb);
+        //ScalePhanBon = PlayerPrefs.GetFloat("ScalePhanBon");
+        //DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScalePhanBon);
     }
 }

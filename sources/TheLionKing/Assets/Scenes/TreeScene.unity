@@ -7673,7 +7673,7 @@ RectTransform:
   m_GameObject: {fileID: 725579849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48341438, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 1
@@ -7736,6 +7736,7 @@ MonoBehaviour:
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
   saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &850730996
 GameObject:
   m_ObjectHideFlags: 0
@@ -10809,7 +10810,7 @@ RectTransform:
   m_GameObject: {fileID: 1700640884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48341438, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 2
@@ -10872,6 +10873,7 @@ MonoBehaviour:
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
   saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &1758343423
 GameObject:
   m_ObjectHideFlags: 0
@@ -11295,6 +11297,9 @@ MonoBehaviour:
   loadingScreen: {fileID: 589368197}
   loadingSlider: {fileID: 589368198}
   SlItem: {fileID: 0}
+  DrawWater: {fileID: 1893282441}
+  DrawLight: {fileID: 725579849}
+  DrawPhanBon: {fileID: 1700640884}
 --- !u!1 &1854927475
 GameObject:
   m_ObjectHideFlags: 0
@@ -11439,6 +11444,9 @@ MonoBehaviour:
   gm: {fileID: 0}
   ObjGameMaster: {fileID: 0}
   VididiChuyen: {fileID: 850730996}
+  DrawWater: {fileID: 1893282441}
+  DrawLight: {fileID: 725579849}
+  DrawPhanBon: {fileID: 1700640884}
 --- !u!95 &1867957360
 Animator:
   serializedVersion: 3
@@ -11638,7 +11646,7 @@ RectTransform:
   m_GameObject: {fileID: 1893282441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54763335, y: 0.22390743, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 0
@@ -11701,6 +11709,7 @@ MonoBehaviour:
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
   saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &1966827498
 GameObject:
   m_ObjectHideFlags: 0
