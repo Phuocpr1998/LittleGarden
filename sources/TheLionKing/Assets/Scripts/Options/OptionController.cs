@@ -21,7 +21,7 @@ public class OptionController : MonoBehaviour
         bool isOn = toggleMusic.GetComponent<CustomToggle>().IsOn;
         if (isOn)
         {
-            audioMixer.SetFloat("Music", 10);
+            audioMixer.SetFloat("Music", 0);
         }
         else
         {
@@ -34,7 +34,7 @@ public class OptionController : MonoBehaviour
         bool isOn = toggleSFX.GetComponent<CustomToggle>().IsOn;
         if (isOn)
         {
-            audioMixer.SetFloat("SFX", 20);
+            audioMixer.SetFloat("SFX", 0);
         } else
         {
             audioMixer.SetFloat("SFX", -80);
