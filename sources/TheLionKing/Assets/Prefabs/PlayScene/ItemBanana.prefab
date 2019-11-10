@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a825a4d71d3a22439f9bcc667ee8093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  score: 3
   indexType: 0
   vecDrirection: {x: -100, y: -100, z: -100}
 --- !u!50 &8788214435529595378

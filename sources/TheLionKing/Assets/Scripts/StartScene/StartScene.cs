@@ -2,29 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class BottomBar : MonoBehaviour
+public class StartScene : MonoBehaviour
 {
+    public Slider loadingSlider;
+
     // Start is called before the first frame update
     void Start()
-    {}
+    {
+        StartToTreeMap();
+    }
 
     // Update is called once per frame
     void Update()
     {}
 
-    public void OnButtonRunClick()
+    public void StartToTreeMap()
     {
-        StartCoroutine(LoadingPlayScene());
+        StartCoroutine(LoadingTreeScene());
     }
 
-    IEnumerator LoadingPlayScene()
+    IEnumerator LoadingTreeScene()
     {
-        // loadingScreen.SetActive(true);
-        AsyncOperation async = SceneManager.LoadSceneAsync("PlayScene");
+        AsyncOperation async = SceneManager.LoadSceneAsync("TreeScene");
         async.allowSceneActivation = false;
         while (!async.isDone)
         {
+            loadingSlider.value = async.progress;
             if (async.progress >= 0.9f)
             {
                 async.allowSceneActivation = true;
