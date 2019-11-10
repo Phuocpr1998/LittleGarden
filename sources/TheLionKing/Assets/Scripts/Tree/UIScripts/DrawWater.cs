@@ -8,7 +8,7 @@ public class DrawWater : MonoBehaviour
 {
     // Start is called before the first frame update
     float maxScaley = 0.5f;
-    float minScaley = 0.02609334f;
+    float minScaley = 0.02579336f;
     public TreeEnum te;
     float sumScale = 0;
     WateringButton wt;
@@ -26,6 +26,8 @@ public class DrawWater : MonoBehaviour
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
         phanTramWater = GameObject.FindGameObjectWithTag("TextWater").GetComponent<TextMeshProUGUI>();
         countItem = GameObject.FindGameObjectWithTag("LeftBar").GetComponent<CountItemManager>();
+        sumScale = 0;
+
     }
 
     // Update is called once per frame
@@ -36,49 +38,50 @@ public class DrawWater : MonoBehaviour
         PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
 
 
-        if (gameObject.transform.localScale.y>minScaley)
+        if (gameObject.transform.localScale.y>=minScaley)
         {
             float y = gameObject.transform.localScale.y;
             y -= 0.005f * Time.deltaTime;
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+        }
 
-            if (gameObject.CompareTag("TTWater"))
+        if (gameObject.CompareTag("TTWater"))
+        {
+            Debug.Log(sumScale);
+            if (te.isWatering == true)
             {
-                Debug.Log(sumScale);
-                if (te.isWatering == true)
+                ButtonTuoiCay.GetComponent<Button>().enabled = false;
+
+                wt = GameObject.FindGameObjectWithTag("TuoiCay").GetComponent<WateringButton>();
+                Debug.Log(gameObject.transform.localScale.y);
+
+                if (gameObject.transform.localScale.y <= maxScaley && sumScale < 0.125f)
                 {
-                    ButtonTuoiCay.GetComponent<Button>().enabled = false;
+                    float a = gameObject.transform.localScale.y;
+                    sumScale += 0.01f * Time.deltaTime;
+                    a += 0.01f * Time.deltaTime;
+                    gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
 
-                    wt = GameObject.FindGameObjectWithTag("TuoiCay").GetComponent<WateringButton>();
-
-                    if (gameObject.transform.localScale.y < maxScaley && sumScale<0.125f)
-                    {
-                        float a = gameObject.transform.localScale.y;
-                        sumScale += 0.01f*Time.deltaTime;
-                        a += 0.01f * Time.deltaTime;
-                        gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
-
-                         phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 255);
-                    }
-                    else
-                    {
-
-                        if(countItem.slNuoc>0)
-                            countItem.slNuoc -= 1;
-                        PlayerPrefs.SetInt("slNuoc", countItem.slNuoc);
-                        phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
-                        wt.EndWearing();
-                        sumScale = 0;
-
-                    }
+                    phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 255);
                 }
                 else
                 {
-                    //Khi không tưới thì  giảm 
-                    ButtonTuoiCay.GetComponent<Button>().enabled = true;
+
+                    if (countItem.slNuoc > 0)
+                        countItem.slNuoc -= 1;
+                    PlayerPrefs.SetInt("slNuoc", countItem.slNuoc);
+                    phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
+                    wt.EndWearing();
+                    sumScale = 0;
+
                 }
             }
-        }
+            else
+            {
+                //Khi không tưới thì  giảm 
+                ButtonTuoiCay.GetComponent<Button>().enabled = true;
+            }
+        }    
     }
 
     public void SetPercent(float percent)

@@ -11,13 +11,14 @@ public class CountItemManager : MonoBehaviour
     public TextMeshProUGUI textAnhSang;
     void Start()
     {
-          
+        PlayerPrefs.SetInt("slNuoc",1);
     }
 
     // Update is called once per frame
     void Update()
     {
         slNuoc = PlayerPrefs.GetInt("slNuoc");
+        
         textNuoc.text = slNuoc.ToString();
         textAnhSang.text = slAnhSang.ToString();
     }

@@ -44,22 +44,22 @@ public class BonPhan : MonoBehaviour
         {
 
             em.enabled = true;
-            if (DrawPhanBon.transform.localScale.y < maxScaley && sumScale < maxUp*maxScaley/100)
+            if (DrawPhanBon.transform.localScale.y <= maxScaley && sumScale <= maxUp*maxScaley/100)
             {
                 if(gm.DiemPhanBon<0 && DrawPhanBon.transform.localScale.y > minScaley)
                 {
                     float a = DrawPhanBon.transform.localScale.y;
                     Debug.Log(a);
-                    sumScale += 0.01f * Time.deltaTime;
-                    a -= 0.01f * Time.deltaTime;
+                    sumScale += 0.02f * Time.deltaTime;
+                    a -= 0.02f * Time.deltaTime;
                     DrawPhanBon.transform.localScale = new Vector2(DrawPhanBon.transform.localScale.x, a);
                 }
 
                 if (gm.DiemPhanBon > 0)
                 {
                     float a = DrawPhanBon.transform.localScale.y;
-                    sumScale += 0.01f * Time.deltaTime;
-                    a += 0.01f * Time.deltaTime;
+                    sumScale += 0.02f * Time.deltaTime;
+                    a += 0.02f * Time.deltaTime;
                     DrawPhanBon.transform.localScale = new Vector2(DrawPhanBon.transform.localScale.x, a);
                 }
 
