@@ -21,20 +21,28 @@ public class BonPhan : MonoBehaviour
         em = GameObject.FindGameObjectWithTag("PartBonPhan").GetComponent<ParticleSystem>().emission;
         gm = GameObject.FindGameObjectWithTag("MergeCanvas").GetComponent<GameMaster>();
         t = Time.time;
-        maxUp = gm.DiemPhanBon;
+        maxUp = 0;
+        gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gm.DiemPhanBon<0)
+        if (maxUp == 0 && gm.DiemPhanBon != 0)
+        {
+            maxUp = gm.DiemPhanBon;
+        }
+
+        if (maxUp < 0)
         {
             maxUp *= -1;
         }
+
         if(anim.GetBool("BatDauBon")==true && Time.time-t >2)
         {
             em.enabled = true;
-            if (DrawPhanBon.transform.localScale.y < maxScaley && sumScale < maxUp)
+            if (DrawPhanBon.transform.localScale.y < maxScaley && sumScale < maxUp*maxScaley/100)
             {
                 if(gm.DiemPhanBon<0)
                 {
@@ -51,11 +59,10 @@ public class BonPhan : MonoBehaviour
                     DrawPhanBon.transform.localScale = new Vector2(DrawPhanBon.transform.localScale.x, a);
                 }
 
-                //phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 255);
             }
             else
             {
-
+                Debug.Log("???");
                 sumScale = 0;
                 gameObject.SetActive(false);
             }

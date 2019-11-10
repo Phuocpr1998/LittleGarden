@@ -82,7 +82,7 @@ public class DrawWater : MonoBehaviour
     public void SetPercent(float percent)
     {
         PhanTramNuoc = percent;
-        float y = percent / 200;
+        float y = percent * maxScaley / 100;
         gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
     }
 

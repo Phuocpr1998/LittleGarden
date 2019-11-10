@@ -72,6 +72,7 @@ public class GameMaster : MonoBehaviour
                 }
                 else if (item.CompareTag("item_water"))
                 {
+
                 }
                 else if (item.CompareTag("item_sun"))
                 {
@@ -95,7 +96,6 @@ public class GameMaster : MonoBehaviour
         }
         else
         {
-            TuiPhan.SetActive(false);
             gameObject.SetActive(false);
         }
     }
