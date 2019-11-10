@@ -49,8 +49,6 @@ public class DrawWater : MonoBehaviour
                         gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, a);
 
                          phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 255);
-                       // phanTramWater.color = new Color(255, 255,255, 255);
-
                     }
                     else
                     {

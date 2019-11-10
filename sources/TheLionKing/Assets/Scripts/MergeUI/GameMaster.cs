@@ -15,7 +15,26 @@ public class GameMaster : MonoBehaviour
     private Dictionary<int, int> colectedItems;
 
     public GameObject[] slotItem;
+    public float DiemPhanBon=0;
+    bool PhanBomKemChatLuong()
+    {
+        int i = 0;
 
+        foreach (KeyValuePair<int, int> dictionaryEntry in colectedItems)
+        {
+
+            GameObject item = items[dictionaryEntry.Key];
+            if (item.GetComponent<ItemController>().score < 0)
+                return true;
+            int sum = dictionaryEntry.Value;
+            if (!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
+            {
+                slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+            }
+            //item.GetComponent<SpriteRenderer>().sprite;
+        }
+        return false;
+    }
     void Start()
     {
         gameObject.SetActive(true);
@@ -30,12 +49,28 @@ public class GameMaster : MonoBehaviour
             //Item nhat duoc + length
             colectedItems = mapController.GetComponent<MapController>().ColectedItems;
             int i = 0;
+            
             foreach(KeyValuePair<int, int> dictionaryEntry in colectedItems)
             {
                 GameObject item = items[dictionaryEntry.Key];
                 int sum = dictionaryEntry.Value;
                 if (!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
                 {
+                    Debug.Log(item.GetComponent<ItemController>().score);
+                    if (PhanBomKemChatLuong() == true)
+                    {
+                        if(item.GetComponent<ItemController>().score < 0)
+                        {
+                            DiemPhanBon += item.GetComponent<ItemController>().score;
+                        }
+                    }
+                    else
+                    {
+                        if (item.GetComponent<ItemController>().score > 0)
+                        {
+                            DiemPhanBon += item.GetComponent<ItemController>().score;
+                        }
+                    }
                     slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
                 }
                 Debug.Log(item.GetComponent<ItemController>().Score);
