@@ -6,10 +6,20 @@ using UnityEngine.Audio;
 public class OptionController : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    private bool isOnMusic, isOnSFX;
     public GameObject toggleMusic, toggleSFX;
     // Start is called before the first frame update
     void Start()
-    {}
+    {
+        float value = -1;
+        audioMixer.GetFloat("Music", out value);
+        isOnMusic = value >= 0;
+        toggleMusic.GetComponent<CustomToggle>().IsOn = isOnMusic;
+
+        audioMixer.GetFloat("SFX", out value);
+        isOnSFX = value >= 0;
+        toggleSFX.GetComponent<CustomToggle>().IsOn = isOnSFX;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,10 +28,10 @@ public class OptionController : MonoBehaviour
 
     public void SwitchAudioMusic()
     {
-        bool isOn = toggleMusic.GetComponent<CustomToggle>().IsOn;
-        if (isOn)
+        isOnMusic = !isOnMusic;
+        if (isOnMusic)
         {
-            audioMixer.SetFloat("Music", 0);
+            audioMixer.SetFloat("Music", 1f);
         }
         else
         {
@@ -31,10 +41,10 @@ public class OptionController : MonoBehaviour
 
     public void SwitchAudioSFX()
     {
-        bool isOn = toggleSFX.GetComponent<CustomToggle>().IsOn;
-        if (isOn)
+        isOnSFX = !isOnSFX;
+        if (isOnSFX)
         {
-            audioMixer.SetFloat("SFX", 0);
+            audioMixer.SetFloat("SFX", 1f);
         } else
         {
             audioMixer.SetFloat("SFX", -80);

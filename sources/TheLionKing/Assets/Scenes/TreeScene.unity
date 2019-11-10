@@ -259,7 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 204617326}
   target: {fileID: 977364174}
-  IsOn: 0
 --- !u!1 &147360419
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +688,9 @@ MonoBehaviour:
   textLevel: {fileID: 1513673466}
   spritesLevel:
   - {fileID: 21300000, guid: 524e651af92a157449904b60844b2f38, type: 3}
+  - {fileID: 21300000, guid: 47a22cefcfb1450488a662919e6ff509, type: 3}
   - {fileID: 21300000, guid: 6c2a256c2377a96419e9a99a89d0b05c, type: 3}
+  - {fileID: 21300000, guid: 9702cf9cc78dfba43842765b516d7152, type: 3}
 --- !u!1 &204617325
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +896,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 1802537300}
   target: {fileID: 1758343426}
-  IsOn: 0
 --- !u!1 &290410917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2680,7 @@ GameObject:
   - component: {fileID: 668170550}
   - component: {fileID: 668170549}
   - component: {fileID: 668170548}
+  - component: {fileID: 668170552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: TreeCanvas
@@ -2770,6 +2771,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &668170552
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668170547}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6530590749386109006, guid: 0bf7f507fbe5b6940adfbabb2bc12b0b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 019ccf7420d165e499ed12b228332dbd, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &668580443
 GameObject:
   m_ObjectHideFlags: 0
@@ -13956,7 +14054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3555f17e7e97772448c9344a431a4f02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b91878f842686974bb76f16182bb02c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14583,6 +14681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ad1b24c98aacd064dac6d1b07659d52b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c79da1768f197b144a3add233c87ac18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14778,7 +14877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 846b740eec34b4845a3b4ecae9e36eec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50b0173ad86f3db469f6ff9f7d329ec1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15568,7 +15667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7373213d309f09a449d240363326407c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d649d8244c2b9249be3c8952caf07a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16981,7 +17080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1b1de95e18ab00d48b93c883695c66b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e41a5a021760074a843b2195bde4b78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

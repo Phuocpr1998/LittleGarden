@@ -8,16 +8,33 @@ public class CustomToggle: MonoBehaviour
     public Image targetGraphic;
     public Image target;
 
-    public bool IsOn = false;
-    
+    private bool isOn = false;
+
+    public bool IsOn {
+        get => isOn;
+        set {
+            if (value != isOn)
+            {
+                changePosition(value);
+                isOn = value;
+            }
+        }
+    }
+
     public void OnTargetClick()
     {
-        IsOn = !IsOn;
+        isOn = !isOn;
+        changePosition(isOn);
+    }
+
+    void changePosition(bool on)
+    {
         Vector3 newPos = target.rectTransform.localPosition;
-        if (IsOn)
+        if (on)
         {
             newPos.x += target.rectTransform.sizeDelta.x / 2;
-        } else
+        }
+        else
         {
             newPos.x -= target.rectTransform.sizeDelta.x / 2;
         }
