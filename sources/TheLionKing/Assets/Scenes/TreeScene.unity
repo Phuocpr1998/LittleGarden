@@ -292,9 +292,8 @@ RectTransform:
   - {fileID: 1529225257}
   - {fileID: 1326813561}
   - {fileID: 587777715}
-  - {fileID: 871865292}
   m_Father: {fileID: 668170551}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1021,7 +1020,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 9e9b3381240ceba4aa6d7eba75aa0418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2722,6 +2721,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 663216486}
+  - {fileID: 871865292}
   - {fileID: 147360420}
   - {fileID: 1843357663}
   - {fileID: 1966827499}
@@ -2804,7 +2804,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -7825,18 +7825,18 @@ RectTransform:
   m_GameObject: {fileID: 871865291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3793103, y: 2.6204658, z: 1}
+  m_LocalScale: {x: 1.0828123, y: 2.0237, z: 1}
   m_Children:
   - {fileID: 1405310763}
   - {fileID: 1678728560}
   - {fileID: 2069560835}
   - {fileID: 1696911285}
-  m_Father: {fileID: 147360420}
-  m_RootOrder: 3
+  m_Father: {fileID: 668170551}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -12.5, y: -285.17316}
+  m_AnchoredPosition: {x: -28, y: 52.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871865293
@@ -11252,7 +11252,7 @@ RectTransform:
   - {fileID: 1264174621}
   - {fileID: 639749250}
   m_Father: {fileID: 668170551}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -11416,8 +11416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
+  ObjGameMaster: {fileID: 0}
   VididiChuyen: {fileID: 850730996}
-  ButtonReturnFlowerHome: {fileID: 0}
 --- !u!95 &1867957360
 Animator:
   serializedVersion: 3
@@ -11695,7 +11695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1966827499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11710,7 +11710,7 @@ RectTransform:
   - {fileID: 549838901}
   - {fileID: 1616025132}
   m_Father: {fileID: 668170551}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
