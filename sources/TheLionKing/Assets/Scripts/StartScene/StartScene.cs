@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class StartScene : MonoBehaviour
 {
     public Slider loadingSlider;
+    int secondLoading;
 
     // Start is called before the first frame update
     void Start()
     {
+        secondLoading = 5;
+        loadingSlider.maxValue = secondLoading;
         StartToTreeMap();
     }
 
@@ -25,17 +28,16 @@ public class StartScene : MonoBehaviour
 
     IEnumerator LoadingTreeScene()
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync("TreeScene");
-        async.allowSceneActivation = false;
-        while (!async.isDone)
+        int second = 0;
+        while (true)
         {
-            loadingSlider.value = async.progress;
-            if (async.progress >= 0.9f)
+            loadingSlider.value = second++;
+            if (second >= secondLoading)
             {
-                async.allowSceneActivation = true;
-                Time.timeScale = 1f;
+                SceneManager.LoadScene("TreeScene");
+                yield break;
             }
-            yield return null;
+            yield return new WaitForSeconds(1);
         }
     }
 }
