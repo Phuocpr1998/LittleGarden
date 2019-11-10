@@ -10,7 +10,7 @@ public class HidLeftBar : MonoBehaviour
     public TreeEnum te;
     int InOut = 0;
     float minHide = -62.5f;
-    float maxHide = -41f;
+    float maxHide = -43f;
     void Start()
     {
         HideButton = GameObject.FindGameObjectWithTag("TreeHideButton");
