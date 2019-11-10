@@ -9,7 +9,7 @@ public class ItemMoveToCenter : MonoBehaviour
     Animator anim;
     GameMaster gm;
     Vector2 Direc;
-
+    
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("MergeCanvas").GetComponent<GameMaster>();

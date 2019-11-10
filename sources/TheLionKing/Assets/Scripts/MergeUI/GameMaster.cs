@@ -37,11 +37,9 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(true);
-        ReturnHomeFlower.SetActive(false);
         mapController = GameObject.FindGameObjectWithTag("map_controller");
         if (mapController != null)
         {
-            slotItem = GameObject.FindGameObjectsWithTag("SlotItem");
             //all items
             items = new List<GameObject>(mapController.GetComponent<MapController>().goodItems);
             items.AddRange(mapController.GetComponent<MapController>().badItems);
@@ -52,34 +50,32 @@ public class GameMaster : MonoBehaviour
             foreach(KeyValuePair<int, int> dictionaryEntry in colectedItems)
             {
                 GameObject item = items[dictionaryEntry.Key];
-                int sum = dictionaryEntry.Value;
+                int soluong = dictionaryEntry.Value;
                 if (!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
                 {
-                    Debug.Log(item.GetComponent<ItemController>().Score);
                     if (PhanBomKemChatLuong() == true)
                     {
                         if(item.GetComponent<ItemController>().Score < 0)
                         {
-                            DiemPhanBon += item.GetComponent<ItemController>().Score;
+                            DiemPhanBon += item.GetComponent<ItemController>().Score*soluong;
                         }
                     }
                     else
                     {
                         if (item.GetComponent<ItemController>().Score > 0)
                         {
-                            DiemPhanBon += item.GetComponent<ItemController>().Score;
+                            DiemPhanBon += item.GetComponent<ItemController>().Score* soluong;
                         }
                     }
                     slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
                 }
-                Debug.Log(item.GetComponent<ItemController>().Score);
-
-                //item.GetComponent<SpriteRenderer>().sprite;
+              
             }
             for(int z = i; z<9; z++)
             {
                 slotItem[z].GetComponent<Image>().enabled = false;
             }
+
             Destroy(mapController);
         }
         else
@@ -90,13 +86,7 @@ public class GameMaster : MonoBehaviour
 
     
     // Update is called once per frame
-    void Update()
-    {
-        if(CountItem==0)
-        {
-            ReturnHomeFlower.SetActive(true);
-        }
-    }
+   
 
     public void HideMergeCanvas()
     {
