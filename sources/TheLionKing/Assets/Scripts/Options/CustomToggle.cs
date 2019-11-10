@@ -9,6 +9,11 @@ public class CustomToggle: MonoBehaviour
     public Image target;
 
     public bool IsOn = false;
+
+    void Start()
+    {
+        OnTargetClick();
+    }
     
     public void OnTargetClick()
     {
