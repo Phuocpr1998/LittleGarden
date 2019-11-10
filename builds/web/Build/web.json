@@ -1,7 +1,7 @@
 {
-"companyName": "DefaultCompany",
-"productName": "TheLionKing",
-"productVersion": "0.1",
+"companyName": "TheLionKing",
+"productName": "LittleGarden",
+"productVersion": "4.0.0",
 "dataUrl": "web.data.unityweb",
 "wasmCodeUrl": "web.wasm.code.unityweb",
 "wasmFrameworkUrl": "web.wasm.framework.unityweb",
