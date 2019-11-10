@@ -2534,9 +2534,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 663216486}
+  - component: {fileID: 663216487}
   m_Layer: 5
   m_Name: DrawWater
-  m_TagString: Untagged
+  m_TagString: ManagerDraw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2563,6 +2564,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -276}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &663216487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663216485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53b234ebb164194eb03366d3b4847d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScaleOfWater: 0
+  ScaleOfLight: 0
+  ScalePhanBon: 0
+  DrawWater: {fileID: 1893282441}
+  DrawLight: {fileID: 725579849}
+  DrawPhanBon: {fileID: 1700640884}
 --- !u!1 &667298371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7667,7 +7686,7 @@ RectTransform:
   m_GameObject: {fileID: 725579849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48341438, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 1
@@ -7729,6 +7748,8 @@ MonoBehaviour:
   phanTramWater: {fileID: 0}
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
+  saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &850730996
 GameObject:
   m_ObjectHideFlags: 0
@@ -10843,7 +10864,7 @@ GameObject:
   - component: {fileID: 1700640888}
   m_Layer: 5
   m_Name: Draw1
-  m_TagString: Untagged
+  m_TagString: TTPhanBon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10857,7 +10878,7 @@ RectTransform:
   m_GameObject: {fileID: 1700640884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48341438, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 2
@@ -10919,6 +10940,8 @@ MonoBehaviour:
   phanTramWater: {fileID: 0}
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
+  saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &1758343423
 GameObject:
   m_ObjectHideFlags: 0
@@ -11343,6 +11366,9 @@ MonoBehaviour:
   loadingScreen: {fileID: 589368197}
   loadingSlider: {fileID: 589368198}
   SlItem: {fileID: 0}
+  DrawWater: {fileID: 1893282441}
+  DrawLight: {fileID: 725579849}
+  DrawPhanBon: {fileID: 1700640884}
 --- !u!1 &1854927475
 GameObject:
   m_ObjectHideFlags: 0
@@ -11487,6 +11513,9 @@ MonoBehaviour:
   gm: {fileID: 0}
   ObjGameMaster: {fileID: 0}
   VididiChuyen: {fileID: 850730996}
+  DrawWater: {fileID: 1893282441}
+  DrawLight: {fileID: 725579849}
+  DrawPhanBon: {fileID: 1700640884}
 --- !u!95 &1867957360
 Animator:
   serializedVersion: 3
@@ -11686,7 +11715,7 @@ RectTransform:
   m_GameObject: {fileID: 1893282441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54763335, y: 0.22390743, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 663216486}
   m_RootOrder: 0
@@ -11748,6 +11777,8 @@ MonoBehaviour:
   phanTramWater: {fileID: 0}
   ButtonTuoiCay: {fileID: 0}
   countItem: {fileID: 0}
+  saveDraw: {fileID: 0}
+  PhanTramNuoc: 0
 --- !u!1 &1966827498
 GameObject:
   m_ObjectHideFlags: 0

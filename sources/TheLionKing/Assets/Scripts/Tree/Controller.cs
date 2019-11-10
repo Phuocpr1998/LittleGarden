@@ -11,6 +11,10 @@ public class Controller : MonoBehaviour
     public Slider loadingSlider;
     public CountItemManager SlItem;
 
+    public GameObject DrawWater;
+    public GameObject DrawLight;
+    public GameObject DrawPhanBon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,15 @@ public class Controller : MonoBehaviour
 
     public void ChangeScenePlay()
     {
+      
+            PlayerPrefs.SetFloat("ScaleOfWater", DrawWater.transform.localScale.y);
+        
+       
+            PlayerPrefs.SetFloat("ScaleOfLight", DrawLight.transform.localScale.y);
+        
+       
+            PlayerPrefs.SetFloat("ScalePhanBon", DrawPhanBon.transform.localScale.y);
+        
         PlayerPrefs.SetInt("slNuoc", SlItem.slNuoc);
         StartToTreeMap();
     }
