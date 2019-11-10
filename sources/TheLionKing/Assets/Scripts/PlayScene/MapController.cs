@@ -10,6 +10,8 @@ public class MapController : MonoBehaviour
     public UnityEngine.UI.Text textTimer;
     public GameObject endMapUI;
     public GameObject loadingScreen;
+    public Slider loadingSlider;
+
     public Font fontText;
 
     public GameObject[] targets;
@@ -33,6 +35,7 @@ public class MapController : MonoBehaviour
     void Start()
     {
         endMapUI.SetActive(false);
+        loadingScreen.SetActive(false);
         duration = 0;
         colectedItems = new Dictionary<int, int>();
 
@@ -197,18 +200,16 @@ public class MapController : MonoBehaviour
 
     IEnumerator LoadingTreeScene()
     {
-        // loadingScreen.SetActive(true);
+        loadingScreen.SetActive(true);
         AsyncOperation async = SceneManager.LoadSceneAsync("TreeScene");
         async.allowSceneActivation = false;
         while (!async.isDone)
         {
+            loadingSlider.value = async.progress;
             if (async.progress >= 0.9f)
             {
-                if (Input.anyKeyDown)
-                {
-                    async.allowSceneActivation = true;
-                    Time.timeScale = 1f;
-                }
+                async.allowSceneActivation = true;
+                Time.timeScale = 1f;
             }
             yield return null;
         }
