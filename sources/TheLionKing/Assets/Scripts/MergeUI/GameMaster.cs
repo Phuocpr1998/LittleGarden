@@ -13,7 +13,7 @@ public class GameMaster : MonoBehaviour
     private GameObject mapController;
     private List<GameObject> items;
     private Dictionary<int, int> colectedItems;
-
+    public GameObject TuiPhan;
     public GameObject[] slotItem;
     public float DiemPhanBon=0;
     bool PhanBomKemChatLuong()
@@ -75,11 +75,12 @@ public class GameMaster : MonoBehaviour
             {
                 slotItem[z].GetComponent<Image>().enabled = false;
             }
-
+            TuiPhan.SetActive(true);
             Destroy(mapController);
         }
         else
         {
+            TuiPhan.SetActive(false);
             gameObject.SetActive(false);
         }
     }
