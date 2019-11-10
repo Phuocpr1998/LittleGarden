@@ -15,6 +15,7 @@ public class DrawWater : MonoBehaviour
     public TextMeshProUGUI phanTramWater;
     public GameObject ButtonTuoiCay;
     public CountItemManager countItem;
+
   
 
     void Start()
@@ -28,6 +29,9 @@ public class DrawWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Set Save Scale
+
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
         

@@ -21,6 +21,7 @@ TagManager:
   - LeftBar
   - SlotItem
   - TTAnhSang
+  - ViTriDiChuyen
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - 123123
   - 
   - 
   - 
@@ -55,6 +56,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: PhanBonParticle
+    uniqueID: 115205281
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

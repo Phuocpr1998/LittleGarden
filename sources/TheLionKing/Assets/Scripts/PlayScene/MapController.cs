@@ -51,12 +51,12 @@ public class MapController : MonoBehaviour
         // set score for item
         for (int i = 0; i < goodItemsLength; i++)
         {
-            goodItems[i].GetComponent<ItemController>().Score = i + 2;
+            goodItems[i].GetComponent<ItemController>().Score = (i + 1) * 2;
         }
 
         for (int i = 0; i < badItemsLength; i++)
         {
-            badItems[i].GetComponent<ItemController>().Score = i - 3;
+            badItems[i].GetComponent<ItemController>().Score = (i + 1) * (-3);
         }
 
     }
