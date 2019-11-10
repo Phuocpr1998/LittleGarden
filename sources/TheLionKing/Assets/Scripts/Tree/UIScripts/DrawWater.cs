@@ -19,7 +19,6 @@ public class DrawWater : MonoBehaviour
 
     public float PhanTramNuoc;
   
-
     void Start()
     {
 
@@ -38,11 +37,6 @@ public class DrawWater : MonoBehaviour
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
         PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
-
-        //Set Save Scale
-
-
-
 
 
 
