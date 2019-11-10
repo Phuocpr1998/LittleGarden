@@ -259,7 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 204617326}
   target: {fileID: 977364174}
-  IsOn: 0
 --- !u!1 &147360419
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +896,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 1802537300}
   target: {fileID: 1758343426}
-  IsOn: 0
 --- !u!1 &290410917
 GameObject:
   m_ObjectHideFlags: 0

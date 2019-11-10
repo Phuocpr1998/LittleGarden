@@ -7,14 +7,18 @@ public class OptionController : MonoBehaviour
 {
     public AudioMixer audioMixer;
     private bool isOnMusic, isOnSFX;
+    public GameObject toggleMusic, toggleSFX;
     // Start is called before the first frame update
     void Start()
     {
         float value = -1;
         audioMixer.GetFloat("Music", out value);
         isOnMusic = value >= 0;
+        toggleMusic.GetComponent<CustomToggle>().IsOn = isOnMusic;
+
         audioMixer.GetFloat("SFX", out value);
         isOnSFX = value >= 0;
+        toggleSFX.GetComponent<CustomToggle>().IsOn = isOnSFX;
     }
 
     // Update is called once per frame

@@ -211,6 +211,9 @@ public class MapController : MonoBehaviour
             Text text2 = c2.AddComponent<Text>();
             text2.font = fontText;
             text2.text = "X";
+            text2.resizeTextForBestFit = true;
+            text2.resizeTextMaxSize = 100;
+            text2.resizeTextMinSize = 10;
             text2.alignment = TextAnchor.MiddleCenter;
             text2.rectTransform.sizeDelta = new Vector2(50, 30);
             text2.gameObject.AddComponent<LayoutElement>().flexibleHeight = 30;
@@ -220,6 +223,9 @@ public class MapController : MonoBehaviour
             c3.transform.parent = p.transform;
             Text text3 = c3.AddComponent<Text>();
             text3.font = fontText;
+            text3.resizeTextForBestFit = true;
+            text3.resizeTextMaxSize = 100;
+            text3.resizeTextMinSize = 10;
             text3.text = entry.Value.ToString();
             text3.alignment = TextAnchor.MiddleCenter;
             text3.rectTransform.sizeDelta = new Vector2(50, 30);
