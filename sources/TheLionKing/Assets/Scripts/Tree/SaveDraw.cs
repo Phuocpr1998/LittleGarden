@@ -11,10 +11,15 @@ public class SaveDraw : MonoBehaviour
     public GameObject DrawWater;
     public GameObject DrawLight;
     public GameObject DrawPhanBon;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfWater"));
+        DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfLight"));
+        DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScalePhanBon"));
+
+
     }
 
     // Update is called once per frame
@@ -23,13 +28,10 @@ public class SaveDraw : MonoBehaviour
         //Debug.Log(PlayerPrefs.HasKey("ScaleOfWater"));
         //set scale
 
-        //ScaleOfWater = PlayerPrefs.GetFloat("ScaleOfWater");
-        //DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScaleOfWater);
-        //Debug.Log(ScaleOfWater);
-        //ScaleOfLight = PlayerPrefs.GetFloat("ScaleOfLight");
-        //DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScaleOfLight);
+        ScaleOfWater = PlayerPrefs.GetFloat("ScaleOfWater");
+        
+        ScaleOfLight = PlayerPrefs.GetFloat("ScaleOfLight");
 
-        //ScalePhanBon = PlayerPrefs.GetFloat("ScalePhanBon");
-        //DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, ScalePhanBon);
+        ScalePhanBon = PlayerPrefs.GetFloat("ScalePhanBon");
     }
 }

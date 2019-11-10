@@ -24,6 +24,8 @@ TagManager:
   - ViTriDiChuyen
   - ManagerDraw
   - TTPhanBon
+  - BonPhan
+  - PartBonPhan
   layers:
   - Default
   - TransparentFX

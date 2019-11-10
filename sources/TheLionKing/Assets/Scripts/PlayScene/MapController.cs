@@ -22,6 +22,13 @@ public class MapController : MonoBehaviour
     public GameObject[] lineTargets;
     public GameObject[] goodItems;
     public GameObject[] badItems;
+
+    //save data
+    public GameObject DrawWater;
+    public GameObject DrawLight;
+    public GameObject DrawPhanBon;
+
+
     public int maxRangeRandom = 100;
     public int mapDuration = 30; // second
 
@@ -245,6 +252,10 @@ public class MapController : MonoBehaviour
             loadingSlider.value = async.progress;
             if (async.progress >= 0.9f)
             {
+                //DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfWater"));
+                //DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfLight"));
+                //DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScalePhanBon"));
+
                 async.allowSceneActivation = true;
                 Time.timeScale = 1f;
             }

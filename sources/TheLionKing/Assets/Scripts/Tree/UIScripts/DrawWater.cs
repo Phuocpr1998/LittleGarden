@@ -22,6 +22,7 @@ public class DrawWater : MonoBehaviour
 
     void Start()
     {
+
         saveDraw = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
         ButtonTuoiCay = GameObject.FindGameObjectWithTag("ButtonTuoiCay");
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
@@ -40,7 +41,6 @@ public class DrawWater : MonoBehaviour
 
         //Set Save Scale
 
-        Debug.Log(PhanTramNuoc);
 
 
 
@@ -48,7 +48,11 @@ public class DrawWater : MonoBehaviour
 
         if (gameObject.transform.localScale.y>minScaley)
         {
-            if(gameObject.CompareTag("TTWater"))
+            float y = gameObject.transform.localScale.y;
+            y -= 0.005f * Time.deltaTime;
+            gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+
+            if (gameObject.CompareTag("TTWater"))
             {
                 if (te.isWatering == true)
                 {
@@ -80,11 +84,11 @@ public class DrawWater : MonoBehaviour
                 {
                     //Khi không tưới thì  giảm 
                     ButtonTuoiCay.GetComponent<Button>().enabled = true;
-                    float y = gameObject.transform.localScale.y;
-                    y -= 0.005f * Time.deltaTime;
-                    gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+                   
                 }
             }
+
+
 
         }
     }
