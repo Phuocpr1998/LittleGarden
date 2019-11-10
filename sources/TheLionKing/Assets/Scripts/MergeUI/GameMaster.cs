@@ -11,7 +11,7 @@ public class GameMaster : MonoBehaviour
     public GameObject ReturnHomeFlower;
 
     private GameObject mapController;
-    private GameObject[] items;
+    private List<GameObject> items;
     private Dictionary<int, int> colectedItems;
 
     public GameObject[] slotItem;
@@ -24,7 +24,7 @@ public class GameMaster : MonoBehaviour
         {
 
             GameObject item = items[dictionaryEntry.Key];
-            if (item.GetComponent<ItemController>().score < 0)
+            if (item.GetComponent<ItemController>().Score < 0)
                 return true;
             int sum = dictionaryEntry.Value;
             if (!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
@@ -43,7 +43,8 @@ public class GameMaster : MonoBehaviour
         {
             slotItem = GameObject.FindGameObjectsWithTag("SlotItem");
             //all items
-            items = mapController.GetComponent<MapController>().items;
+            items = new List<GameObject>(mapController.GetComponent<MapController>().goodItems);
+            items.AddRange(mapController.GetComponent<MapController>().badItems);
             //Item nhat duoc + length
             colectedItems = mapController.GetComponent<MapController>().ColectedItems;
             int i = 0;
@@ -52,25 +53,27 @@ public class GameMaster : MonoBehaviour
             {
                 GameObject item = items[dictionaryEntry.Key];
                 int sum = dictionaryEntry.Value;
-               if(!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
+                if (!item.CompareTag("item_water") && !item.CompareTag("item_sun"))
                 {
-                    Debug.Log(item.GetComponent<ItemController>().score);
+                    Debug.Log(item.GetComponent<ItemController>().Score);
                     if (PhanBomKemChatLuong() == true)
                     {
-                        if(item.GetComponent<ItemController>().score < 0)
+                        if(item.GetComponent<ItemController>().Score < 0)
                         {
-                            DiemPhanBon += item.GetComponent<ItemController>().score;
+                            DiemPhanBon += item.GetComponent<ItemController>().Score;
                         }
                     }
                     else
                     {
-                        if (item.GetComponent<ItemController>().score > 0)
+                        if (item.GetComponent<ItemController>().Score > 0)
                         {
-                            DiemPhanBon += item.GetComponent<ItemController>().score;
+                            DiemPhanBon += item.GetComponent<ItemController>().Score;
                         }
                     }
                     slotItem[i++].GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
                 }
+                Debug.Log(item.GetComponent<ItemController>().Score);
+
                 //item.GetComponent<SpriteRenderer>().sprite;
             }
             for(int z = i; z<9; z++)

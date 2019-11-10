@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
-    public float score;
+    [SerializeField]
+    private float score;
+    public float Score { get => score; set => score = value; }
+
     public int indexType;
     public Vector3 vecDrirection;
 
@@ -13,13 +16,14 @@ public class ItemController : MonoBehaviour
     private float minScale = 0.1f;
     private Rigidbody2D myRigidbody;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         gameObject.transform.localScale = new Vector3(minScale, minScale, gameObject.transform.localScale.z);
         scaleStep = -1;
-
         StartCoroutine(scaleObject(0.2f));
     }
 
