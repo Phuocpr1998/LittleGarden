@@ -36,12 +36,21 @@ public class DrawWater : MonoBehaviour
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
         PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
 
+        
 
         if (gameObject.transform.localScale.y>=minScaley)
         {
             float y = gameObject.transform.localScale.y;
             y -= 0.005f * Time.deltaTime;
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, y);
+        }
+
+        if(gameObject.CompareTag("TTPhanBon"))
+        {
+            if(gameObject.transform.localScale.y<0.05f)
+            {
+                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, 0.05f);
+            }
         }
 
         if (gameObject.CompareTag("TTWater"))

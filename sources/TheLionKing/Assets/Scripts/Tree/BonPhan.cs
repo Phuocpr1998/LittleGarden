@@ -23,7 +23,6 @@ public class BonPhan : MonoBehaviour
         t = Time.time;
         maxUp = 0;
         sumScale = 0;
-        gameObject.SetActive(false);
 
     }
 
@@ -39,14 +38,24 @@ public class BonPhan : MonoBehaviour
         {
             maxUp *= -1;
         }
+
+        if(maxUp==0)
+        {
+            anim.SetBool("KhongCoPhan", true);
+        }
+        else
+        {
+            anim.SetBool("KhongCoPhan", false);
+
+        }
         //Debug.Log(anim.GetBool("BatDauBon"));
-        if(anim.GetBool("BatDauBon")==true)
+        if (anim.GetBool("BatDauBon")==true)
         {
 
             em.enabled = true;
             if (DrawPhanBon.transform.localScale.y <= maxScaley && sumScale <= maxUp*maxScaley/100)
             {
-                if(gm.DiemPhanBon<0 && DrawPhanBon.transform.localScale.y > minScaley)
+                if(gm.DiemPhanBon<0 && DrawPhanBon.transform.localScale.y >= minScaley)
                 {
                     float a = DrawPhanBon.transform.localScale.y;
                     Debug.Log(a);
@@ -66,7 +75,9 @@ public class BonPhan : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                anim.SetBool("HetPhan", true);
+                anim.SetBool("BatDauBon", false);
+                em.enabled = false;
                 sumScale = 0;
             }
         }
@@ -74,7 +85,10 @@ public class BonPhan : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (anim.GetBool("KhongCoPhan") == true)
+            return;
         anim.SetBool("BatDauBon", true);
+
         
 
     }
