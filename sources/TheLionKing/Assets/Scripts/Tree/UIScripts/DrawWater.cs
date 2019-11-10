@@ -17,12 +17,8 @@ public class DrawWater : MonoBehaviour
     public CountItemManager countItem;
     public SaveDraw saveDraw;
 
-<<<<<<< HEAD
-=======
     public float PhanTramNuoc;
   
-
->>>>>>> 1acc9bdc0507fad2623eb774121d937d59229cfc
     void Start()
     {
         saveDraw = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
@@ -42,12 +38,6 @@ public class DrawWater : MonoBehaviour
         PhanTramNuoc = Mathf.Floor((gameObject.transform.localScale.y * 100 / 50) * 100);
 
         //Set Save Scale
-
-        Debug.Log(PhanTramNuoc);
-
-
-
-
 
         if (gameObject.transform.localScale.y>minScaley)
         {
