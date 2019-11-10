@@ -22,6 +22,8 @@ TagManager:
   - SlotItem
   - TTAnhSang
   - ViTriDiChuyen
+  - ManagerDraw
+  - TTPhanBon
   layers:
   - Default
   - TransparentFX

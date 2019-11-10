@@ -15,11 +15,13 @@ public class DrawWater : MonoBehaviour
     public TextMeshProUGUI phanTramWater;
     public GameObject ButtonTuoiCay;
     public CountItemManager countItem;
+    public SaveDraw saveDraw;
 
   
 
     void Start()
     {
+        saveDraw = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
         ButtonTuoiCay = GameObject.FindGameObjectWithTag("ButtonTuoiCay");
         te = GameObject.FindGameObjectWithTag("TreeCanvas").GetComponent<TreeEnum>();
         phanTramWater = GameObject.FindGameObjectWithTag("TextWater").GetComponent<TextMeshProUGUI>();
@@ -30,11 +32,30 @@ public class DrawWater : MonoBehaviour
     void Update()
     {
 
-        //Set Save Scale
 
         //Phan tram cua nuoc 
         phanTramWater.text = Mathf.Floor((gameObject.transform.localScale.y*100/50)*100).ToString()+"%";
-        
+
+
+        //Set Save Scale
+
+        if (gameObject.CompareTag("TTWater"))
+        {
+            PlayerPrefs.SetFloat("ScaleOfWater", gameObject.transform.localScale.y);
+        }
+        else if (gameObject.CompareTag("TTAnhSang"))
+        {
+            PlayerPrefs.SetFloat("ScaleOfLight", gameObject.transform.localScale.y);
+        }
+        else if (gameObject.CompareTag("TTPhanBon"))
+        {
+            PlayerPrefs.SetFloat("ScalePhanBon", gameObject.transform.localScale.y);
+        }
+
+
+
+
+
         if (gameObject.transform.localScale.y>minScaley)
         {
             if(gameObject.CompareTag("TTWater"))
