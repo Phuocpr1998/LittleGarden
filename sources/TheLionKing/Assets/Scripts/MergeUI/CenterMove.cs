@@ -26,6 +26,7 @@ public class CenterMove : MonoBehaviour
         ObjGameMaster = GameObject.FindGameObjectWithTag("MergeCanvas");
         Save = GameObject.FindGameObjectWithTag("ManagerDraw").GetComponent<SaveDraw>();
     }
+
     void Update()
     {
         if (gm.CountItem == 0 && time == 0)

@@ -28,22 +28,14 @@ public class Controller : MonoBehaviour
         
     }
 
-
     public void ChangeScenePlay()
     {
-      
-            PlayerPrefs.SetFloat("ScaleOfWater", DrawWater.transform.localScale.y);
-        
-       
-            PlayerPrefs.SetFloat("ScaleOfLight", DrawLight.transform.localScale.y);
-        
-       
-            PlayerPrefs.SetFloat("ScalePhanBon", DrawPhanBon.transform.localScale.y);
-        
+        PlayerPrefs.SetFloat("ScaleOfWater", DrawWater.transform.localScale.y);
+        PlayerPrefs.SetFloat("ScaleOfLight", DrawLight.transform.localScale.y);
+        PlayerPrefs.SetFloat("ScalePhanBon", DrawPhanBon.transform.localScale.y);
         PlayerPrefs.SetInt("slNuoc", SlItem.slNuoc);
         StartToTreeMap();
     }
-
 
     public void StartToTreeMap()
     {
