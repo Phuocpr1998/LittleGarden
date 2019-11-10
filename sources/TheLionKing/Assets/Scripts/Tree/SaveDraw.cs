@@ -15,9 +15,20 @@ public class SaveDraw : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfWater"));
-        DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfLight"));
-        DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScalePhanBon"));
+        if(PlayerPrefs.HasKey("ScaleOfWater"))
+            DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfWater"));
+        else
+            DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, 0.5f);
+
+        if(PlayerPrefs.HasKey("ScaleOfLight"))
+            DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScaleOfLight"));
+        else
+            DrawLight.transform.localScale = new Vector2(DrawWater.transform.localScale.x, 0.5f);
+
+        if(PlayerPrefs.HasKey("ScalePhanBon"))
+            DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, PlayerPrefs.GetFloat("ScalePhanBon"));
+        else
+             DrawPhanBon.transform.localScale = new Vector2(DrawWater.transform.localScale.x, 150);
 
 
     }
