@@ -43,7 +43,6 @@ public class CenterMove : MonoBehaviour
         if(Direc.magnitude<0.1f && gm.CountItem==0 )
         {
             DrawWater.transform.localScale = new Vector2(DrawWater.transform.localScale.x, Save.ScaleOfWater);
-            Debug.Log(Save.ScaleOfWater);
             ObjGameMaster.SetActive(false);
         }
     }

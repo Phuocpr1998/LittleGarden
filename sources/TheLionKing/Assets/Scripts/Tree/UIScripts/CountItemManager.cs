@@ -5,8 +5,8 @@ using TMPro;
 public class CountItemManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int slNuoc = 1;
-    public int slAnhSang = 1;
+    public int slNuoc = 5;
+    public int slAnhSang = 5;
     public TextMeshProUGUI textNuoc;
     public TextMeshProUGUI textAnhSang;
     void Start()

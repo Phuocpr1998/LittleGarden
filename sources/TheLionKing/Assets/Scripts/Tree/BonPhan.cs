@@ -9,7 +9,7 @@ public class BonPhan : MonoBehaviour
     public GameObject DrawPhanBon;
     public GameMaster gm;
     float maxScaley = 0.5f;
-    float minScaley = 0.02609334f;
+    float minScaley = 0.02603692f;
     float sumScale = 0;
 
     float t;
@@ -22,6 +22,7 @@ public class BonPhan : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("MergeCanvas").GetComponent<GameMaster>();
         t = Time.time;
         maxUp = 0;
+        sumScale = 0;
         gameObject.SetActive(false);
 
     }
@@ -38,19 +39,22 @@ public class BonPhan : MonoBehaviour
         {
             maxUp *= -1;
         }
-
-        if(anim.GetBool("BatDauBon")==true && Time.time-t >2)
+        //Debug.Log(anim.GetBool("BatDauBon"));
+        if(anim.GetBool("BatDauBon")==true)
         {
+
             em.enabled = true;
             if (DrawPhanBon.transform.localScale.y < maxScaley && sumScale < maxUp*maxScaley/100)
             {
-                if(gm.DiemPhanBon<0)
+                if(gm.DiemPhanBon<0 && DrawPhanBon.transform.localScale.y > minScaley)
                 {
                     float a = DrawPhanBon.transform.localScale.y;
+                    Debug.Log(a);
                     sumScale += 0.01f * Time.deltaTime;
                     a -= 0.01f * Time.deltaTime;
                     DrawPhanBon.transform.localScale = new Vector2(DrawPhanBon.transform.localScale.x, a);
                 }
+
                 if (gm.DiemPhanBon > 0)
                 {
                     float a = DrawPhanBon.transform.localScale.y;
@@ -62,9 +66,8 @@ public class BonPhan : MonoBehaviour
             }
             else
             {
-                Debug.Log("???");
-                sumScale = 0;
                 gameObject.SetActive(false);
+                sumScale = 0;
             }
         }
     }
@@ -72,5 +75,7 @@ public class BonPhan : MonoBehaviour
     private void OnMouseDown()
     {
         anim.SetBool("BatDauBon", true);
+        
+
     }
 }

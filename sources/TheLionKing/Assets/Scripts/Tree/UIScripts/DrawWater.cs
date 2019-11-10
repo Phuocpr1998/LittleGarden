@@ -44,6 +44,7 @@ public class DrawWater : MonoBehaviour
 
             if (gameObject.CompareTag("TTWater"))
             {
+                Debug.Log(sumScale);
                 if (te.isWatering == true)
                 {
                     ButtonTuoiCay.GetComponent<Button>().enabled = false;
@@ -62,7 +63,8 @@ public class DrawWater : MonoBehaviour
                     else
                     {
 
-                        countItem.slNuoc -= 1;
+                        if(countItem.slNuoc>0)
+                            countItem.slNuoc -= 1;
                         PlayerPrefs.SetInt("slNuoc", countItem.slNuoc);
                         phanTramWater.color = new Color(phanTramWater.color.r, phanTramWater.color.g, phanTramWater.color.b, 0);
                         wt.EndWearing();
